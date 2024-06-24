@@ -2,8 +2,8 @@
 
 .. _smn_api_51005:
 
-Querying Topic Details
-======================
+Querying Details of a Topic
+===========================
 
 Description
 -----------
@@ -25,20 +25,20 @@ URI
 
 -  Parameter description
 
-   +-----------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------+
-   | Parameter       | Mandatory       | Type            | Description                                                                                           |
-   +=================+=================+=================+=======================================================================================================+
-   | project_id      | Yes             | String          | Project ID                                                                                            |
-   |                 |                 |                 |                                                                                                       |
-   |                 |                 |                 | See :ref:`Obtaining a Project ID <smn_api_66000>`.                                                    |
-   +-----------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------+
-   | topic_urn       | Yes             | String          | Unique resource ID of a topic. You can obtain it according to :ref:`Querying Topics <smn_api_51004>`. |
-   +-----------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------+
+   +-----------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------------------+
+   | Parameter       | Mandatory       | Type            | Description                                                                                                       |
+   +=================+=================+=================+===================================================================================================================+
+   | project_id      | Yes             | String          | Project ID                                                                                                        |
+   |                 |                 |                 |                                                                                                                   |
+   |                 |                 |                 | See :ref:`Obtaining a Project ID <smn_api_66000>`.                                                                |
+   +-----------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------------------+
+   | topic_urn       | Yes             | String          | Unique resource ID of a topic. You can obtain it by referring to :ref:`Querying Topics <en-us_topic_0036016755>`. |
+   +-----------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------------------+
 
 Request
 -------
 
-Request example
+Example request
 
 .. code-block:: text
 
@@ -56,11 +56,11 @@ Response
    +-----------------------+-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
    | name                  | String                | Name of the topic                                                                                                                            |
    +-----------------------+-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-   | topic_urn             | String                | Unique resource ID of a topic. You can obtain it according to :ref:`Querying Topics <smn_api_51004>`.                                        |
+   | topic_urn             | String                | Unique resource ID of a topic. You can obtain it by referring to :ref:`Querying Topics <en-us_topic_0036016755>`.                            |
    +-----------------------+-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
    | display_name          | String                | Topic display name, which is presented as the name of the email sender in email messages                                                     |
    +-----------------------+-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-   | push_policy           | int                   | Message pushing policy                                                                                                                       |
+   | push_policy           | Integer               | Message pushing policy                                                                                                                       |
    |                       |                       |                                                                                                                                              |
    |                       |                       | **0** indicates that the message sending fails and the message is cached in the queue. **1** indicates that the failed message is discarded. |
    +-----------------------+-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -72,27 +72,30 @@ Response
    |                       |                       |                                                                                                                                              |
    |                       |                       | The UTC time is in *YYYY-MM-DDTHH:MM:SSZ* format.                                                                                            |
    +-----------------------+-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+   | enterprise_project_id | String                | Enterprise project ID                                                                                                                        |
+   +-----------------------+-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
--  Response example
+-  Example response
 
    .. code-block::
 
       {
-          "update_time":"2016-08-01T02:16:38Z",
-          "push_policy":0,
-          "create_time":"2016-08-01T02:16:38Z",
-          "name":"test_create_topic_v2",
-          "topic_urn":"urn:smn:regionId:8bad8a40e0f7462f8c1676e3f93a8183:test_create_topic_v2",
-          "display_name":"test create topic v2",
-          "request_id":"6837531fd3f54550927b930180a706bf"
+          "update_time": "2016-08-01T02:16:38Z",
+          "push_policy": 0,
+          "create_time": "2016-08-01T02:16:38Z",
+          "name": "test_create_topic_v2",
+          "topic_urn": "urn:smn:regionId:8bad8a40e0f7462f8c1676e3f93a8183:test_create_topic_v2",
+          "display_name": "test create topic v2",
+          "request_id": "6837531fd3f54550927b930180a706bf",
+          "enterprise_project_id" : "0"
       }
 
 Returned Value
 --------------
 
-See section :ref:`Returned Value <smn_api_63002>`.
+See :ref:`Returned Value <smn_api_63002>`.
 
-Error Code
-----------
+Error Codes
+-----------
 
-See section :ref:`Error Code <smn_api_64000>`.
+See :ref:`Error Codes <smn_api_64000>`.

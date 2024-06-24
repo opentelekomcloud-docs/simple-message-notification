@@ -7,13 +7,13 @@ Exception Response
 
 -  Parameter description
 
-   ========== ====== ==============================================
+   ========== ====== ====================================================
    Parameter  Type   Description
-   ========== ====== ==============================================
+   ========== ====== ====================================================
    request_id String Request ID
-   code       String See section :ref:`Error Code <smn_api_64000>`.
-   message    String See section :ref:`Error Code <smn_api_64000>`.
-   ========== ====== ==============================================
+   code       String For details, see :ref:`Error Codes <smn_api_64000>`.
+   message    String For details, see :ref:`Error Codes <smn_api_64000>`.
+   ========== ====== ====================================================
 
 -  Example
 

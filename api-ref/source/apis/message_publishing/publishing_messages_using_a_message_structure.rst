@@ -14,7 +14,7 @@ Description
 
 -  Function
 
-   Use the message structure to publish a message to the topic. After the message ID is returned, the message has been saved and is to be pushed to the subscribers of the topic. This API allows you to send different message content to different types of subscribers.
+   Use the message structure to publish a message to a topic. After the message ID is returned, the message has been saved and is to be pushed to the subscribers of the topic. This API allows you to send different message content to different types of subscribers.
 
 URI
 ---
@@ -25,15 +25,15 @@ URI
 
 -  Parameter description
 
-   +-----------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------+
-   | Parameter       | Mandatory       | Type            | Description                                                                                           |
-   +=================+=================+=================+=======================================================================================================+
-   | project_id      | Yes             | String          | Project ID                                                                                            |
-   |                 |                 |                 |                                                                                                       |
-   |                 |                 |                 | See :ref:`Obtaining a Project ID <smn_api_66000>`.                                                    |
-   +-----------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------+
-   | topic_urn       | Yes             | String          | Unique resource ID of a topic. You can obtain it according to :ref:`Querying Topics <smn_api_51004>`. |
-   +-----------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------+
+   +-----------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------------+
+   | Parameter       | Mandatory       | Type            | Description                                                                                                         |
+   +=================+=================+=================+=====================================================================================================================+
+   | project_id      | Yes             | String          | Project ID                                                                                                          |
+   |                 |                 |                 |                                                                                                                     |
+   |                 |                 |                 | See :ref:`Obtaining a Project ID <smn_api_66000>`.                                                                  |
+   +-----------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------------+
+   | topic_urn       | Yes             | String          | Unique resource ID of the topic. You can obtain it by referring to :ref:`Querying Topics <en-us_topic_0036016755>`. |
+   +-----------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------------+
 
 Request
 -------
@@ -43,11 +43,13 @@ Request
    +-------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | Parameter         | Mandatory       | Type            | Description                                                                                                                                                          |
    +===================+=================+=================+======================================================================================================================================================================+
-   | subject           | Yes             | String          | Message subject, which is presented as the email subject when SMN sends massages to email subscribers                                                                |
+   | subject           | No              | String          | Message subject, which is presented as the email subject when SMN sends messages to email subscribers                                                                |
    |                   |                 |                 |                                                                                                                                                                      |
    |                   |                 |                 | The message subject cannot exceed 512 bytes.                                                                                                                         |
    +-------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | message_structure | Yes             | String          | Message structure, which contains JSON character strings. Specify protocols in the structure, which can be **http**, **https**, **email**, **dms**, and **sms**.     |
+   | message_structure | Yes             | String          | Message structure, which contains JSON strings                                                                                                                       |
+   |                   |                 |                 |                                                                                                                                                                      |
+   |                   |                 |                 | **email**, **sms**, **http**, and **https** are supported.                                                                                                           |
    |                   |                 |                 |                                                                                                                                                                      |
    |                   |                 |                 | The **default** protocol is mandatory. If the system fails to match any other protocols, the default message is sent.                                                |
    |                   |                 |                 |                                                                                                                                                                      |
@@ -61,11 +63,15 @@ Request
    |                   |                 |                 |                                                                                                                                                                      |
    |                   |                 |                 |    If the three formats are specified at the same time, they take effect in the following sequence: **message_structure** > **message_template_name** > **message**. |
    +-------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | time_to_live      | No              | String          | TTL of a message, specifically, the maximum time period for retaining the message in the system                                                                      |
+   | time_to_live      | No              | String          | The maximum retention period of a message in SMN                                                                                                                     |
    |                   |                 |                 |                                                                                                                                                                      |
-   |                   |                 |                 | If the period expires, the system will discard the message. The time period is measured in seconds, and the default TTL is **3600s** (one hour).                     |
+   |                   |                 |                 | After the retention period expires, SMN does not send this message.                                                                                                  |
    |                   |                 |                 |                                                                                                                                                                      |
-   |                   |                 |                 | The value must be a positive integer less than or equal to 604,800 (3600 x 24 x 7).                                                                                  |
+   |                   |                 |                 | Unit: second                                                                                                                                                         |
+   |                   |                 |                 |                                                                                                                                                                      |
+   |                   |                 |                 | Default retention period: **3600** (one hour)                                                                                                                        |
+   |                   |                 |                 |                                                                                                                                                                      |
+   |                   |                 |                 | The retention period must be a positive integer less than or equal to 604,800 (3600 x 24 x 7).                                                                       |
    +-------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 -  Example request
@@ -78,8 +84,8 @@ Request
 
       {
           "subject": "test message v2",
-          "time_to_live":"3600",
-          "message_structure": "{"default":"test v2 default", "email":"abc"}"
+          "time_to_live": "3600",
+          "message_structure": "{\n  \"default\": \"xxx\",\n  \"APNS\": \"{\\\"aps\\\":{\\\"alert\\\":{\\\"title\\\":\\\"xxx\\\",\\\"body\\\":\\\"xxx\\\"}}}\"\n}"
       }
 
    .. note::
@@ -110,9 +116,9 @@ Response
 Returned Value
 --------------
 
-See section :ref:`Returned Value <smn_api_63002>`.
+See :ref:`Returned Value <smn_api_63002>`.
 
-Error Code
-----------
+Error Codes
+-----------
 
-See section :ref:`Error Code <smn_api_64000>`.
+See :ref:`Error Codes <smn_api_64000>`.

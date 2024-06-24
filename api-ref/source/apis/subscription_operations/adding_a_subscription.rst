@@ -16,7 +16,7 @@ Description
 
    Add a subscription to a specified topic. If the status of the subscription is unconfirmed, a confirmation message is sent to the subscriber. After confirming the subscription, the subscriber can receive notification messages published to the topic.
 
-   By default, 10000 subscriptions can be added to a topic. However, in a high-concurrency scenario, which is rare, extra subscriptions may be added successfully.
+   By default, 10,000 subscriptions can be added to a topic. However, in a high-concurrency scenario, which is rare, extra subscriptions may be added successfully.
 
    The API is idempotent. If the added subscription already exists, a successful result and status code 200 are returned. Otherwise, the status code is 201.
 
@@ -29,15 +29,15 @@ URI
 
 -  Parameter description
 
-   +-----------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------+
-   | Parameter       | Mandatory       | Type            | Description                                                                                           |
-   +=================+=================+=================+=======================================================================================================+
-   | project_id      | Yes             | String          | Project ID                                                                                            |
-   |                 |                 |                 |                                                                                                       |
-   |                 |                 |                 | See :ref:`Obtaining a Project ID <smn_api_66000>`.                                                    |
-   +-----------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------+
-   | topic_urn       | Yes             | String          | Unique resource ID of a topic. You can obtain it according to :ref:`Querying Topics <smn_api_51004>`. |
-   +-----------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------+
+   +-----------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------------------+
+   | Parameter       | Mandatory       | Type            | Description                                                                                                       |
+   +=================+=================+=================+===================================================================================================================+
+   | project_id      | Yes             | String          | Project ID                                                                                                        |
+   |                 |                 |                 |                                                                                                                   |
+   |                 |                 |                 | See :ref:`Obtaining a Project ID <smn_api_66000>`.                                                                |
+   +-----------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------------------+
+   | topic_urn       | Yes             | String          | Unique resource ID of a topic. You can obtain it by referring to :ref:`Querying Topics <en-us_topic_0036016755>`. |
+   +-----------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------------------+
 
 Request
 -------
@@ -58,12 +58,10 @@ Request
    |                 |                 |                 |    For an email subscription, the endpoint is an email address.                                        |
    |                 |                 |                 |                                                                                                        |
    |                 |                 |                 |    For an SMS subscription, the endpoint is a phone number.                                            |
-   |                 |                 |                 |                                                                                                        |
-   |                 |                 |                 |    For a DMS subscription, the endpoint is a message queue.                                            |
    +-----------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------+
    | protocol        | Yes             | String          | Subscription protocol (Different protocols indicate different types of endpoints to receive messages.) |
    |                 |                 |                 |                                                                                                        |
-   |                 |                 |                 | Currently, the following protocols are supported:                                                      |
+   |                 |                 |                 | The following protocols are supported:                                                                 |
    |                 |                 |                 |                                                                                                        |
    |                 |                 |                 | -  **email**: The endpoints are email address.                                                         |
    |                 |                 |                 | -  **sms**: The endpoints are phone numbers.                                                           |
@@ -71,7 +69,7 @@ Request
    +-----------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------+
    | remark          | No              | String          | Description of the subscription                                                                        |
    |                 |                 |                 |                                                                                                        |
-   |                 |                 |                 | The remarks must be a UTF-8-coded character string containing 128 bytes at most.                       |
+   |                 |                 |                 | The remarks must be UTF-8-coded and can contain up to 128 bytes.                                       |
    +-----------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------+
 
 -  Example request
@@ -113,9 +111,9 @@ Response
 Returned Value
 --------------
 
-See section :ref:`Returned Value <smn_api_63002>`.
+See :ref:`Returned Value <smn_api_63002>`.
 
-Error Code
-----------
+Error Codes
+-----------
 
-See section :ref:`Error Code <smn_api_64000>`.
+See :ref:`Error Codes <smn_api_64000>`.
