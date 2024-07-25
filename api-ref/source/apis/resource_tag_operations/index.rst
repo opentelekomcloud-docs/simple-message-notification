@@ -5,20 +5,20 @@
 Resource Tag Operations
 =======================
 
--  :ref:`Querying Resources by Tag <smn_api_56001>`
--  :ref:`Adding or Deleting Resource Tags in Batches <smn_api_56002>`
--  :ref:`Adding a Resource Tag <smn_api_56003>`
--  :ref:`Deleting a Resource Tag <smn_api_56004>`
--  :ref:`Querying Resource Tags <smn_api_56005>`
+-  :ref:`Adding a Tag <smn_api_56003>`
+-  :ref:`Querying Tags of a Topic <smn_api_56005>`
 -  :ref:`Querying Tags in a Specified Project <smn_api_56006>`
+-  :ref:`Querying Topics by Tag <smn_api_56001>`
+-  :ref:`Deleting a Tag <smn_api_56004>`
+-  :ref:`Adding or Deleting Tags in Batches <smn_api_56002>`
 
 .. toctree::
    :maxdepth: 1
    :hidden: 
 
-   querying_resources_by_tag
-   adding_or_deleting_resource_tags_in_batches
-   adding_a_resource_tag
-   deleting_a_resource_tag
-   querying_resource_tags
+   adding_a_tag
+   querying_tags_of_a_topic
    querying_tags_in_a_specified_project
+   querying_topics_by_tag
+   deleting_a_tag
+   adding_or_deleting_tags_in_batches

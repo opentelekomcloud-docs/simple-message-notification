@@ -2,8 +2,8 @@
 
 .. _smn_api_56004:
 
-Deleting a Resource Tag
-=======================
+Deleting a Tag
+==============
 
 Description
 -----------
@@ -34,9 +34,7 @@ URI
    +-----------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------+
    | resource_type   | Yes             | String          | Resource type                                                                                          |
    |                 |                 |                 |                                                                                                        |
-   |                 |                 |                 | The value can be the following:                                                                        |
-   |                 |                 |                 |                                                                                                        |
-   |                 |                 |                 | **smn_topic**: topic                                                                                   |
+   |                 |                 |                 | Only **smn_topic** (topic) is supported.                                                               |
    +-----------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------+
    | resource_id     | Yes             | String          | Resource ID                                                                                            |
    |                 |                 |                 |                                                                                                        |
@@ -49,7 +47,7 @@ URI
 Request
 -------
 
--  Request example
+-  Example request
 
    .. code-block:: text
 
@@ -65,7 +63,7 @@ Returned Value
 
 See :ref:`Returned Value <smn_api_63002>`.
 
-Error Code
-----------
+Error Codes
+-----------
 
-See section :ref:`Error Code <smn_api_64000>`.
+See :ref:`Error Codes <smn_api_64000>`.

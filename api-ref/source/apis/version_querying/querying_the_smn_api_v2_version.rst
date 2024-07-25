@@ -38,7 +38,7 @@ URI
 Request
 -------
 
--  Request example
+-  Example request
 
    .. code-block:: text
 
@@ -51,11 +51,11 @@ Response
 
    .. table:: **Table 1** Parameter in the response
 
-      ========= ====== ==============
+      ========= ====== ===================
       Parameter Type   Description
-      ========= ====== ==============
-      version   Object Version object
-      ========= ====== ==============
+      ========= ====== ===================
+      version   Object Version information
+      ========= ====== ===================
 
    .. table:: **Table 2** Description of the **version** field
 
@@ -71,8 +71,8 @@ Response
       | status                | String                | Version status, which can be the following:                                                                |
       |                       |                       |                                                                                                            |
       |                       |                       | -  **CURRENT**: widely used version                                                                        |
-      |                       |                       | -  **SUPPORTED**: earlier version which is still supported                                                 |
-      |                       |                       | -  **DEPRECATED**: deprecated version which may be deleted later                                           |
+      |                       |                       | -  **SUPPORTED**: earlier version that is still supported                                                  |
+      |                       |                       | -  **DEPRECATED**: deprecated version that may be deleted later                                            |
       +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------------+
       | updated               | String                | Version release time, which must be UTC time. For example, the release time of v2 is 2014-06-28T12:20:21Z. |
       +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------------+
@@ -90,7 +90,7 @@ Response
       rel       String Shortcut link marker name
       ========= ====== =========================
 
--  Response example
+-  Example response
 
    .. code-block::
 
@@ -114,9 +114,9 @@ Response
 Returned Value
 --------------
 
-See section :ref:`Returned Value <smn_api_63002>`.
+See :ref:`Returned Value <smn_api_63002>`.
 
-Error Code
-----------
+Error Codes
+-----------
 
-See section :ref:`Error Code <smn_api_64000>`.
+See :ref:`Error Codes <smn_api_64000>`.

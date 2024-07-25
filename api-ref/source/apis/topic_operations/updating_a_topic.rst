@@ -1,8 +1,8 @@
-:original_name: smn_api_51003.html
+:original_name: en-us_topic_0036017301.html
 
-.. _smn_api_51003:
+.. _en-us_topic_0036017301:
 
-Deleting a Topic
+Updating a Topic
 ================
 
 Description
@@ -10,18 +10,18 @@ Description
 
 -  API name
 
-   DeleteTopic
+   UpdateTopic
 
 -  Function
 
-   Delete a topic and its subscribers. If a topic is deleted, a pending message will fail to deliver to the topic subscribers.
+   Update the topic display name.
 
 URI
 ---
 
 -  URI format
 
-   DELETE /v2/{project_id}/notifications/topics/{topic_urn}
+   PUT /v2/{project_id}/notifications/topics/{topic_urn}
 
 -  Parameter description
 
@@ -38,11 +38,24 @@ URI
 Request
 -------
 
-Example request
+-  Parameter description
 
-.. code-block:: text
+   +-----------------+-----------------+-----------------+------------------------------------------------------------------------------------------+
+   | Parameter       | Mandatory       | Type            | Description                                                                              |
+   +=================+=================+=================+==========================================================================================+
+   | display_name    | Yes             | String          | Topic display name, which is presented as the name of the email sender in email messages |
+   |                 |                 |                 |                                                                                          |
+   |                 |                 |                 | The display name cannot exceed 192 bytes.                                                |
+   +-----------------+-----------------+-----------------+------------------------------------------------------------------------------------------+
 
-   DELETE https://{SMN_Endpoint}/v2/{project_id}/notifications/topics/urn:smn:regionId:f96188c7ccaf4ffba0c9aa149ab2bd57:test_topic_v2
+-  Example request
+
+   .. code-block:: text
+
+      PUT https://{SMN_Endpoint}/v2/{project_id}/notifications/topics/urn:smn:regionId:f96188c7ccaf4ffba0c9aa149ab2bd57:test_topic_v2
+      {
+          "display_name": "testtest222"
+      }
 
 Response
 --------
@@ -60,7 +73,7 @@ Response
    .. code-block::
 
       {
-           "request_id": "5fcba32bd2814ea39431829c22bda94b"
+          "request_id": "6a63a18b8bab40ffb71ebd9cb80d0085"
       }
 
 Returned Value

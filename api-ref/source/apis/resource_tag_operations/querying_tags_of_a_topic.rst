@@ -2,8 +2,8 @@
 
 .. _smn_api_56005:
 
-Querying Resource Tags
-======================
+Querying Tags of a Topic
+========================
 
 Description
 -----------
@@ -14,7 +14,7 @@ Description
 
 -  Function
 
-   Query tags of a specified resource.
+   Query tags of a topic.
 
 URI
 ---
@@ -34,9 +34,7 @@ URI
    +-----------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------+
    | resource_type   | Yes             | String          | Resource type                                                                                          |
    |                 |                 |                 |                                                                                                        |
-   |                 |                 |                 | The value can be the following:                                                                        |
-   |                 |                 |                 |                                                                                                        |
-   |                 |                 |                 | **smn_topic**: topic                                                                                   |
+   |                 |                 |                 | Only **smn_topic** (topic) is supported.                                                               |
    +-----------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------+
    | resource_id     | Yes             | String          | Resource ID                                                                                            |
    |                 |                 |                 |                                                                                                        |
@@ -53,7 +51,7 @@ Request
 
    None
 
--  Request example
+-  Example request
 
    .. code-block:: text
 
@@ -74,15 +72,15 @@ Response
 
    .. table:: **Table 1** Resource_tag structure
 
-      +-----------+-----------+--------+-------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-      | Parameter | Mandatory | Type   | Description | Constraint                                                                                                                                                                                           |
-      +===========+===========+========+=============+======================================================================================================================================================================================================+
-      | key       | Yes       | String | Tag key     | The key contains 36 Unicode characters at most and cannot be blank or an empty string. It can contain only digits, letters, hyphens (-), and underscores (_) and must not start or end with a space. |
-      +-----------+-----------+--------+-------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-      | value     | Yes       | String | Tag value   | Each value contains 43 Unicode characters at most and can be an empty string. It can contain only digits, letters, hyphens (-), and underscores (_) and must not start or end with a space.          |
-      +-----------+-----------+--------+-------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      +-----------+--------+-------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      | Parameter | Type   | Description | Constraint                                                                                                                                                                                     |
+      +===========+========+=============+================================================================================================================================================================================================+
+      | key       | String | Tag key     | A key can contain up to 36 Unicode characters, including only digits, letters, hyphens (-), and underscores (_). A key cannot be left blank, be an empty string, or start or end with a space. |
+      +-----------+--------+-------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      | value     | String | Tag value   | A value can contain up to 43 Unicode characters, including only digits, letters, hyphens (-), and underscores (_). A value can be an empty string, but it cannot start or end with a space.    |
+      +-----------+--------+-------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
--  Response example
+-  Example response
 
    .. code-block::
 
@@ -102,9 +100,9 @@ Response
 Returned Value
 --------------
 
-See section :ref:`Returned Value <smn_api_63002>`.
+See :ref:`Returned Value <smn_api_63002>`.
 
-Error Code
-----------
+Error Codes
+-----------
 
-See section :ref:`Error Code <smn_api_64000>`.
+See :ref:`Error Codes <smn_api_64000>`.

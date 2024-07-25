@@ -1,27 +1,27 @@
-:original_name: smn_api_51003.html
+:original_name: smn_api_51009.html
 
-.. _smn_api_51003:
+.. _smn_api_51009:
 
-Deleting a Topic
-================
+Deleting All Topic Policies
+===========================
 
 Description
 -----------
 
 -  API name
 
-   DeleteTopic
+   DeleteTopicAttributes
 
 -  Function
 
-   Delete a topic and its subscribers. If a topic is deleted, a pending message will fail to deliver to the topic subscribers.
+   Delete all topic policies.
 
 URI
 ---
 
 -  URI format
 
-   DELETE /v2/{project_id}/notifications/topics/{topic_urn}
+   DELETE /v2/{project_id}/notifications/topics/{topic_urn}/attributes
 
 -  Parameter description
 
@@ -42,7 +42,7 @@ Example request
 
 .. code-block:: text
 
-   DELETE https://{SMN_Endpoint}/v2/{project_id}/notifications/topics/urn:smn:regionId:f96188c7ccaf4ffba0c9aa149ab2bd57:test_topic_v2
+   DELETE https://{SMN_Endpoint}/v2/{project_id}/notifications/topics/{topic_urn}/attributes
 
 Response
 --------
@@ -60,7 +60,7 @@ Response
    .. code-block::
 
       {
-           "request_id": "5fcba32bd2814ea39431829c22bda94b"
+          "request_id": "6837531fd3f54550927b930180a706bf"
       }
 
 Returned Value
