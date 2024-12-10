@@ -110,7 +110,7 @@ html_copy_source = False
 latex_documents = [
     ('index',
      'smn-umn.tex',
-     u'Simple Message Notification - User Guide',
+    u'Simple Message Notification - User Guide',
      u'OpenTelekomCloud', 'manual'),
 ]
 

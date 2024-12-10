@@ -110,7 +110,7 @@ html_copy_source = False
 latex_documents = [
     ('index',
      'smn-api-ref.tex',
-     u'Simple Message Notification - API Reference',
+    u'Simple Message Notification - API Reference',
      u'OpenTelekomCloud', 'manual'),
 ]
 
