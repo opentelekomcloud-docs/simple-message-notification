@@ -10,7 +10,7 @@ Permissions Policies and Supported Actions
 -  :ref:`Template Operations <en-us_topic_0173593943>`
 -  :ref:`Tag Operations <en-us_topic_0173593946>`
 -  :ref:`Message Publishing <en-us_topic_0173593944>`
--  :ref:`Sending an Application Message <en-us_topic_0173593949>`
+-  :ref:`Sending an Application Message (Deprecated) <en-us_topic_0173593949>`
 
 .. toctree::
    :maxdepth: 1
@@ -21,4 +21,4 @@ Permissions Policies and Supported Actions
    template_operations
    tag_operations
    message_publishing
-   sending_an_application_message
+   sending_an_application_message_deprecated
