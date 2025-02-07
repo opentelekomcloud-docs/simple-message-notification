@@ -14,7 +14,7 @@ Description
 
 -  Function
 
-   Use the message template to publish a message to a topic. After the message ID is returned, the message has been saved and is to be pushed to the subscribers of the topic. This API allows you to send messages to different types of subscribers using different template protocols with the same name.
+   Use the message template to publish a message to a topic. After the message ID is returned, the message has been saved and is to be pushed to the subscribers of the topic. This API allows you to send messages to different types of subscribers using the same template name but different protocols.
 
 URI
 ---
