@@ -5,12 +5,12 @@
 Accessing and Using SMN
 =======================
 
-The cloud platform provides a web-based management console and HTTPS-based APIs through which you can access the SMN service.
+You can access the SMN service using a web-based management console and HTTPS-based APIs.
 
--  Management console
+-  **Management console**
 
    The management console is a web user interface for you to manage your computing, storage, and other cloud resources. You can log in the management console and select **Simple Message Notification** on the homepage to switch to the SMN console.
 
--  API calling
+-  **APIs**
 
-   If you want to integrate SMN into a third-party system for secondary development, you can access SMN using APIs. For details, see *Simple Message Notification API Reference*.
+   If you want to integrate SMN into a third-party system for secondary development, you can access SMN using APIs. For details, see `Simple Message Notification API Reference <https://docs.otc.t-systems.com/en-us/api/smn/en-us_topic_0036017316.html>`__.

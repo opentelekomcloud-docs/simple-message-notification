@@ -7,16 +7,18 @@ Template Message Format
 
 Message templates are used to publish messages with fixed content and use variables as placeholders to represent content that you can change.
 
-The size of template content cannot exceed 256 KB. The following is an example of how to format a template when you manually type the template message content:
+The size of template message cannot exceed 256 KB. The following is an example of how to format a template when you manually type the template message content:
 
 .. code-block::
 
-   "message_template_name":"confirm_message",
-   "tags":{
-       "topic_urn":"urn:smn:regionId:xxxx:SMN_01"
-        }
+   {
+      "message_template_name":"confirm_message",
+      "tags":{
+          "topic_urn":"urn:smn:regionId:xxxx:SMN_01"
+       }
+   }
 
-.. table:: **Table 1** Parameters in template message format
+.. table:: **Table 1** Parameters description and setting
 
    +-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | Parameter             | Description                                                                                                                                                                                                                                                          |

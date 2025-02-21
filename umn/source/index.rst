@@ -6,11 +6,12 @@ Simple Message Notification - User Guide
    :maxdepth: 1
 
    overview/index
-   getting_started/index
+   getting_started
    topic_management/index
    subscription_management/index
    message_template_management
-   smn_operation_recording/index
+   cts_auditing/index
+   permissions_management/index
    faqs/index
    appendix/index
    change_history

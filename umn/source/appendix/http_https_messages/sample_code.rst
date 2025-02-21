@@ -8,7 +8,7 @@ Sample Code
 Java
 ----
 
-Verify **signing_cert_url**, **signature** that obtained in :ref:`HTTP/HTTPS Message Format <smn_ug_a9002>`, and **message** (contained in the message signature) to check the message validity, as shown in the following:
+Verify **signing_cert_url**, **signature** that obtained in :ref:`HTTP or HTTPS Message Format <smn_ug_a9002>`, and **message** (contained in the message signature) to check the message validity, as shown in the following:
 
 .. code-block::
 
