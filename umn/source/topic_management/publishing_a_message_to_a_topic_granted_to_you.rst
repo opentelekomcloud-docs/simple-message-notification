@@ -13,16 +13,16 @@ If another user creates a topic and grants you permissions to publish messages, 
 Prerequisites
 -------------
 
-You have obtained the URN of the topic granted to you. For details about obtaining the URN of a topic, see :ref:`Creating a Topic <en-us_topic_0043961401>`.
+You have obtained the URN of the topic granted to you. For details about obtaining a topic URN, see :ref:`Creating a Topic <en-us_topic_0043961401>`.
 
-To Publish a Message to a Topic Granted to You
-----------------------------------------------
+Procedure
+---------
 
 #. Log in to the management console.
 
 #. Click |image1| on the upper left to select the desired region and project.
 
-#. Under **Application**, select **Simple Message Notification**.
+#. Select **Simple Message Notification** under **Application**.
 
    The SMN console is displayed.
 

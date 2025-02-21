@@ -13,24 +13,24 @@ Projects are used to group and isolate OpenStack resources, including compute, s
 Protocol
 --------
 
-A protocol is a message type. SMN supports the following protocols: SMS, DMS, Email, HTTP, and HTTPS.
+A protocol is a message type. SMN supports the following protocols: SMS, FunctionGraph (function), Email, HTTP, and HTTPS.
 
 Publisher
 ---------
 
-A publisher sends messages to a topic.
+A publisher publishes messages to a topic.
 
 Subscriber
 ----------
 
-A subscriber receives messages delivered from a topic.
+A subscriber receives messages published to a topic.
 
 When adding a subscription, you can choose protocols as required:
 
--  For the Email protocol, the endpoint can be one or more email addresses.
--  For the SMS protocol, the endpoint can be one or more phone numbers.
--  For the HTTP or HTTPS protocol, the endpoint can be one or more URLs.
--  For the DMS protocol, the endpoint can be one or more message queues.
+-  Email: The endpoint can be one or more email addresses.
+-  SMS: The endpoint can be one or more phone numbers.
+-  HTTP or HTTPS: The endpoint can be one or more URLs.
+-  FunctionGraph (function): The endpoint can be one function.
 
 Topic
 -----
@@ -44,11 +44,11 @@ Uniform Resource Names (URNs) are used to identify SMN resources.
 
 -  Topic URN
 
-   After a topic is created, SMN generates a topic URN composed of the service name, region name, project ID, and topic name to uniquely identify the topic, for example, **urn:smn:region:cffe4fc4c9a54219b60dbaf7b586e132:Mytopic**. When you call an API to create a topic, a topic URN will be returned. The URN will be used whenever a publisher or subscriber performs operations relating to the topic.
+   After a topic is created, SMN generates a topic URN composed of the service name, region name, project ID, and topic name to uniquely identify the topic, for example, **urn:smn:region:cffe4fc4c9a54219b60dbaf7b586e132:Mytopic**. When you call an API to create a topic, a topic URN will be returned. The topic URN will be used whenever a publisher or subscriber performs operations relating to the topic.
 
 -  Subscription URN
 
-   After a user subscribes to a topic, SMN will generate a URN for the subscription composed of the service name, region name, project ID, and topic name, for example, **urn:smn:region:cffe4fc4c9a54219b60dbaf7b586e132:Mytopic:5293b436967f450abc51e0c36347b27a**. The URN is displayed on the **Subscriptions** page for subscribers to confirm and cancel a subscription.
+   After a user subscribes to a topic, SMN will generate a subscription URN composed of the service name, region name, project ID, topic name, and subscription ID, for example, **urn:smn:region:cffe4fc4c9a54219b60dbaf7b586e132:Mytopic:5293b436967f450abc51e0c36347b27a**. The URN is displayed on the **Subscriptions** page for subscribers to confirm or cancel a subscription.
 
 Message Template
 ----------------
@@ -60,4 +60,4 @@ Template Variable
 
 A message template contains fixed and changeable content. Changeable content is represented with variables. You can specify values for variables when publishing messages using a template.
 
-For example, the template content is **The Arts and Crafts Exposition will be held from {startdate} through {enddate}. We sincerely invite you to join us.** In the content, **{startdate}** and **{enddate}** are variables.
+For example, the template content is **The Arts and Crafts Exposition will be held from** *{startdate}* **through** *{enddate}*\ **. We sincerely invite you to join us.**. In the content, *{startdate}* and *{enddate}* are variables.

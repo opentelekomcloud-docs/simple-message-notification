@@ -8,16 +8,16 @@ Adding a Subscription to a Topic
 Scenarios
 ---------
 
-To deliver messages published to a topic to subscription endpoints, you must add the endpoints to the topic.
+To deliver messages published to a topic to endpoints, you must add the subscription endpoints to the topic.
 
-To Add a Subscription
+Adding a Subscription
 ---------------------
 
 #. Log in to the management console.
 
-#. Click |image1| on the upper left to select the desired region and project.
+#. In the upper left corner of the page, click |image1| and select the desired region and project.
 
-#. Under **Application**, select **Simple Message Notification**.
+#. Select **Simple Message Notification** under **Application**.
 
    The SMN console is displayed.
 
@@ -25,37 +25,71 @@ To Add a Subscription
 
    The **Topics** page is displayed.
 
-#. Locate the topic that you want to add a subscription to. In the **Operation** column, choose **More** > **Add Subscription**.
+#. Locate the topic that you want to add a subscription to. In the **Operation** column, click **Add Subscription**.
+
+   Alternatively, click a topic name. In the upper right corner of the displayed page, click **Add Subscription**.
 
    The **Add Subscription** dialog box is displayed.
 
 
-   .. figure:: /_static/images/en-us_image_0095665399.png
+   .. figure:: /_static/images/en-us_image_0000001833018621.png
       :alt: **Figure 1** Add Subscription
 
       **Figure 1** Add Subscription
 
-#. Specify the subscription protocol and endpoints. You can enter 10 endpoints at most, each on a separate line.
+#. Specify the subscription protocol and endpoints.
 
-   -  Email
+   .. table:: **Table 1** Parameters for adding a subscription
 
-      Enter a valid email address, for example, **username@example.com**.
-
-      Subscribers will receive a subscription confirmation email valid in 48 hours and must confirm the subscription to receive messages published to the topic.
-
-   -  HTTP/HTTPS
-
-      Enter a public network URL, for example, **http://example.com/notification/action**. HTTP/HTTPS subscribers must confirm their subscriptions. For details about HTTP/HTTPS messages, see :ref:`Introduction <smn_ug_a9001>`.
-
-   -  SMS
-
-      Enter a valid mobile number preceded by a plus sign (+) and a country code .Example: +4900000000
-
-      Subscribers will receive a subscription confirmation message valid in 48 hours and must confirm the subscription to receive messages published to the topic.
-
-   -  DMS
-
-      Subscription endpoints are message queues. This type of subscriptions does not require confirmation. Click |image2| to select subscription endpoints. When you select DMS queues, grant the **ProduceMessages** permission to SMN in the queue policy. For details, see section "Managing Queue Policies" in the *Distributed Message Service User Guide*.
+      +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+      | Parameter                         | Description                                                                                                                                         |
+      +===================================+=====================================================================================================================================================+
+      | Topic Name                        | Specifies the name of the topic to which messages are published.                                                                                    |
+      +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+      | Protocol                          | Specifies the protocol over which messages are sent. Possible values are **SMS**, **HTTP**, **HTTPS**, **FunctionGraph (function)**, and **Email**. |
+      +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+      | Endpoint                          | Specifies the subscription endpoint. You can add up to 10 SMS, email, HTTP, or HTTPS endpoints, one in each line.                                   |
+      |                                   |                                                                                                                                                     |
+      |                                   | -  **SMS**: Enter one or more valid phone numbers.                                                                                                  |
+      |                                   |                                                                                                                                                     |
+      |                                   |    A phone number must be preceded by a plus sign (+) and a country code.                                                                           |
+      |                                   |                                                                                                                                                     |
+      |                                   |    Examples:                                                                                                                                        |
+      |                                   |                                                                                                                                                     |
+      |                                   |    **+4900000000**                                                                                                                                  |
+      |                                   |                                                                                                                                                     |
+      |                                   |    **+4900000001**                                                                                                                                  |
+      |                                   |                                                                                                                                                     |
+      |                                   |    **+4900000002**                                                                                                                                  |
+      |                                   |                                                                                                                                                     |
+      |                                   |    **+4900000003**                                                                                                                                  |
+      |                                   |                                                                                                                                                     |
+      |                                   | -  **Email**: Enter one or more valid email addresses.                                                                                              |
+      |                                   |                                                                                                                                                     |
+      |                                   |    Examples:                                                                                                                                        |
+      |                                   |                                                                                                                                                     |
+      |                                   |    **username@example.com**                                                                                                                         |
+      |                                   |                                                                                                                                                     |
+      |                                   |    **username2@example.com**                                                                                                                        |
+      |                                   |                                                                                                                                                     |
+      |                                   | -  **HTTP**: Enter one or more public network URLs.                                                                                                 |
+      |                                   |                                                                                                                                                     |
+      |                                   |    Example:                                                                                                                                         |
+      |                                   |                                                                                                                                                     |
+      |                                   |    **http://example.com/notification/action**                                                                                                       |
+      |                                   |                                                                                                                                                     |
+      |                                   | -  **HTTPS**: Enter one or more public network URLs.                                                                                                |
+      |                                   |                                                                                                                                                     |
+      |                                   |    Example:                                                                                                                                         |
+      |                                   |                                                                                                                                                     |
+      |                                   |    **https://example.com/notification/action**                                                                                                      |
+      |                                   |                                                                                                                                                     |
+      |                                   | -  **FunctionGraph (function)**: Click |image2| to select a function and specify its version.                                                       |
+      +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+      | Version                           | This parameter is only available if **FunctionGraph (function)** is selected for **Protocol**. Select the version for the function.                 |
+      +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+      | Description                       | Specifies the remarks of the subscription.                                                                                                          |
+      +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 #. Click **OK**.
 
@@ -63,9 +97,10 @@ To Add a Subscription
 
    .. note::
 
-      -  To prevent malicious users from attacking subscription endpoints, SMN limits the number of confirmation messages that can be sent to an endpoint within a specified period of time. For details, see :ref:`Control over Subscription Confirmation Traffic <smn_ug_a4000>`.
-      -  SMN does not check whether subscription endpoints exist when you add subscriptions. However, subscribers will not receive notification messages until they confirm their subscriptions.
-      -  After you add a subscription, SMN sends a confirmation message to the subscription endpoint. The message contains a link for confirming the subscription. The subscription confirmation link is valid within 48 hours. Confirm the subscription on your mobile phone, mailbox, or other endpoints in time.
+      -  To prevent malicious users from attacking subscription endpoints, SMN limits the number of confirmation messages that can be sent to an endpoint within a specified period. For details, see :ref:`Traffic Control over Subscription Confirmation <smn_ug_a4000>`.
+      -  SMN does not check whether subscription endpoints exist when you add subscriptions.
+      -  After you add a subscription or request subscription confirmation, SMN will send a confirmation message to the endpoints, and the link in the confirmation message will be valid for 48 hours.
+      -  Subscription confirmation messages will be counted as messages sent and will be billed.
 
 .. |image1| image:: /_static/images/en-us_image_0151546390.png
-.. |image2| image:: /_static/images/en-us_image_0148410841.png
+.. |image2| image:: /_static/images/en-us_image_0000001495292001.png

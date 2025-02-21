@@ -6,7 +6,7 @@ HTTP/HTTPS Messages
 ===================
 
 -  :ref:`Introduction <smn_ug_a9001>`
--  :ref:`HTTP/HTTPS Message Format <smn_ug_a9002>`
+-  :ref:`HTTP or HTTPS Message Format <smn_ug_a9002>`
 -  :ref:`Message Signature Verification <smn_ug_a9003>`
 -  :ref:`Sample Code <smn_ug_a9004>`
 
@@ -15,6 +15,6 @@ HTTP/HTTPS Messages
    :hidden: 
 
    introduction
-   http_https_message_format
+   http_or_https_message_format
    message_signature_verification
    sample_code

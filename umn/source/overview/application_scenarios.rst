@@ -7,11 +7,11 @@ Application Scenarios
 
 -  **System notifications**
 
-   After events or alarms are triggered, SMN can send notifications to specified users by email, SMS message, or HTTP/HTTPS message. For example, Cloud Trace Service (CTS) detects key cloud service operations and uses SMN to notify you and other users.
+   After events or alarms are triggered, SMN can send notifications to specified users by email, SMS message, FunctionGraph (function), or HTTP/HTTPS message. For example, Cloud Trace Service (CTS) detects key cloud service operations and uses SMN to notify you and other users.
 
 -  **Integrating with cloud services**
 
-   SMN can function as a message middleware to connect cloud services, reducing system complexity and improving efficiency. For example, Cloud Eye does not have to be integrated with Object Storage Service (OBS) to interact with each other. Instead, they are connected by SMN. Therefore, faults in one service will not affect the other.
+   SMN can function as a message middleware to directly connect cloud services, improving service efficiency. For example, Cloud Eye does not have to be integrated with Object Storage Service (OBS) to interact with each other. Instead, they can be connected by SMN, so faults in one service will not affect the other.
 
 -  **Off-peak traffic control**
 

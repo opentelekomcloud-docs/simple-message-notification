@@ -7,7 +7,7 @@ Topic Management
 
 -  :ref:`Creating a Topic <en-us_topic_0043961401>`
 -  :ref:`Modifying the Display Name of a Topic <smn_ug_42000>`
--  :ref:`Adding Tags to a Topic <smn_ug_0006>`
+-  :ref:`Adding, Modifying, or Deleting a Topic Tag <smn_ug_0006>`
 -  :ref:`Configuring Topic Policies <smn_ug_0007>`
 -  :ref:`Adding a Subscription to a Topic <en-us_topic_0043961402>`
 -  :ref:`Publishing a Message <smn_ug_0027>`
@@ -20,7 +20,7 @@ Topic Management
 
    creating_a_topic
    modifying_the_display_name_of_a_topic
-   adding_tags_to_a_topic
+   adding_modifying_or_deleting_a_topic_tag
    configuring_topic_policies/index
    adding_a_subscription_to_a_topic
    publishing_a_message/index

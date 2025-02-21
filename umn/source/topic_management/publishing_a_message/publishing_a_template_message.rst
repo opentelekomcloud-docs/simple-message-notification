@@ -10,11 +10,9 @@ Scenarios
 
 Message templates contain fixed message content. If you need to send the same or similar messages multiple times, you can create a message template for quick message sending.
 
-You can create different templates for different protocols using the same template name so that each type of subscribers can receive customized messages. Templates contain variables as the placeholders to represent changeable content that you can replace with your own message content. Note that you must create a template whose Protocol is **Default**, or the system will not allow you to publish messages using this template name.
+You can create different templates for different protocols using the same template name so that each type of subscribers can receive customized messages. Templates contain variables as the placeholders to represent changeable content that you can replace with your own message content. Note that you must create a template whose **Protocol** is **Default**, or the system will prevent you from publishing messages using this template name.
 
-When you are creating messages using a template, select a template name. The system will list all variables in the following protocol sequence: default, SMS, email, DMS, HTTP, and HTTPS. The same variables are listed only once even if they are used in multiple protocols, and the protocols they support are listed after each variable. Specify content for each variable in the message template, and SMN replaces them with the content you entered. If you do not enter any content for a variable, the system will treat it as empty when sending messages.
-
-SMN tries to match different types of subscribers to the template protocols. If there is no template for a specified protocol, SMN will use the default template to send messages to subscribers of that protocol.
+When you are creating messages using a template, select a template name. The system will list all variables in the following protocol sequence: **Default**, **SMS**, **Email**, **FunctionGraph (function),** **HTTP**, and **HTTPS**. The same variables are listed only once even if they are used in multiple protocols, and the protocols they support are listed after each variable. Specify content for each variable in the message template, and SMN replaces them with the content you entered. If you do not enter any content for a variable, the system will treat it as empty when sending messages. SMN tries to match different types of subscribers to the template protocols. If there is no template for a specified protocol, SMN will use the default template to send messages to subscribers of that protocol.
 
 This section describes how to publish messages using a template. For more details about message templates, see :ref:`Message Template Management <en-us_topic_0043394889>`.
 
@@ -23,36 +21,39 @@ Prerequisites
 
 Subscribers in the topic must have confirmed the subscription, or they will not be able to receive any messages.
 
-To Create a Message Template
-----------------------------
+Creating a Message Template
+---------------------------
 
 #. Log in to the management console.
 
 #. Click |image1| on the upper left to select the desired region and project.
 
-#. Under **Application**, select **Simple Message Notification**.
+#. Select **Simple Message Notification** under **Application**.
 
    The SMN console is displayed.
 
-#. In the navigation pane, choose **Message Templates**.
+#. In the navigation pane on the left, choose **Message Templates**.
 
-#. In the upper right corner, click **Create Message Template**. For details, see :ref:`To Create a Message Template <en-us_topic_0043394889__section66624127194914>` in :ref:`Message Template Management <en-us_topic_0043394889>`.
+   The **Topics** page is displayed.
+
+#. In the upper right corner, click **Create Message Template**. For details, see :ref:`Creating a Message Template <en-us_topic_0043394889__section66624127194914>` in :ref:`Message Template Management <en-us_topic_0043394889>`.
 
    For example, the template information is as follows:
 
    -  **Template Name**: **tem_001**
-
    -  **Protocol**: **Default**
-
    -  **Content**: **The Arts and Crafts Exposition will be held from {startdate} through {enddate}. We sincerely invite you to join us.**
 
+#. Click **OK**.
 
-      .. figure:: /_static/images/en-us_image_0095665587.png
-         :alt: **Figure 1** Create Message Template
 
-         **Figure 1** Create Message Template
+   .. figure:: /_static/images/en-us_image_0095665587.png
+      :alt: **Figure 1** Create Message Template
 
-To Publish a Template Message
+      **Figure 1** Create Message Template
+
+
+Publishing a Template Message
 -----------------------------
 
 #. Log in to the management console.
@@ -67,13 +68,13 @@ To Publish a Template Message
 
    The **Topics** page is displayed.
 
-#. In the topic list, locate the topic that you need to publish a message to and click **Publish Message** under **Operation**.
+#. In the topic list, locate the topic that you need to publish a message to and click **Publish Message** in the **Operation** column.
 
-#. Configure the required parameters.
+   Alternatively, locate the topic and click its name. In the upper right corner of the displayed topic details page, click **Publish Message**.
 
-   The topic name is provided by default and cannot be changed.
+#. Configure the required parameters. (The topic name is provided by default and cannot be changed. **Subject** is optional.)
 
-   Select **Template** for **Message Format**. Then, manually type the template content in the **Message** box or click **Generate Template Message** to generate it automatically. The template message content cannot exceed 256 KB.
+   Select **Template** for **Message Format**. Then, manually type the template content in the **Message** box or click **Generate Template Message** to generate it automatically. The message content cannot be left blank and its size cannot exceed 256 KB.
 
    -  If you choose to manually type the template message, see :ref:`Template Message Format <smn_ug_a2000>` for detailed requirements.
    -  If you choose to automatically generate the template message, proceed with :ref:`7 <en-us_topic_0044170770__li37303092212221>` through :ref:`10 <en-us_topic_0044170770__li3929025721230>`.
@@ -82,7 +83,7 @@ To Publish a Template Message
 
    Click **Generate Template Message**.
 
-#. Select a template name, for example, **tem_001**, and enter values for the variables.
+#. Select a template name, for example, **tem_001**. Enter values for the variables.
 
    The system replaces the variables with the message content you specified. The protocols configured in the template are displayed after each variable. Only the **Default** protocol is specified in **tem_001**, as shown in :ref:`Figure 2 <en-us_topic_0044170770__fig365979611560>`. Therefore, all confirmed subscribers in the topic will receive the message content in the default template.
 
@@ -93,9 +94,9 @@ To Publish a Template Message
 
       **Figure 2** Generate Template Message
 
-#. Click the **Preview** tab to preview the message.
+#. Click the **Preview** tab and click **Message Preview** to preview the message.
 
-   In this example, the message generated is "The Arts and Crafts Exposition will be held from February 10 through February 21. We sincerely invite you to join us."
+   In this example, the message generated is **The Arts and Crafts Exposition will be held from February 10 through February 21. We sincerely invite you to join us.**.
 
 
    .. figure:: /_static/images/en-us_image_0095665678.png
@@ -117,7 +118,7 @@ To Publish a Template Message
 
 #. Click **OK**.
 
-   SMN delivers your message to all subscription endpoints. For details about messages for different protocols, see :ref:`Messages of Different Protocols <smn_ug_a3000>`.
+   SMN delivers your message to all subscription endpoints. For details about messages for different protocols, see :ref:`Messages Using Different Protocols <smn_ug_a3000>`.
 
 .. |image1| image:: /_static/images/en-us_image_0259222479.png
 .. |image2| image:: /_static/images/en-us_image_0259222478.png

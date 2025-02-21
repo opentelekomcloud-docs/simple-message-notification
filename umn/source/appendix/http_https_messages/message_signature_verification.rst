@@ -33,7 +33,7 @@ After receiving an HTTP/HTTPS message, check it with the following procedure:
 
 #. Notification messages
 
-   -  A notification message signature must contain the following parameters (If the value of **subject** is empty, do not include it in the signature):
+   -  A notification message signature must contain the following parameters (If **subject** is left blank, omit **subject** in the signature):
 
       .. code-block::
 
@@ -44,11 +44,7 @@ After receiving an HTTP/HTTPS message, check it with the following procedure:
          topic_urn
          type
 
-   -  For example, the signature information for a notification message is as follows:
-
-      .. note::
-
-         Each parameter occupies a line, with its value following in the next line.
+   -  Example signature information for a notification message
 
       .. code-block::
 
@@ -65,6 +61,10 @@ After receiving an HTTP/HTTPS message, check it with the following procedure:
          type
          Notification
 
+      .. note::
+
+         Each parameter occupies a line, with its value following in the next line.
+
 #. Subscription confirmation and subscription cancellation messages
 
    -  A subscription confirmation or subscription cancellation message signature must contain the following parameters:
@@ -78,16 +78,12 @@ After receiving an HTTP/HTTPS message, check it with the following procedure:
          topic_urn
          type
 
-   -  For example, the signature information for a subscription confirmation message is as follows:
-
-      .. note::
-
-         Each parameter occupies a line, with its value following in the next line.
+   -  Example signature information for a subscription confirmation message
 
       .. code-block::
 
          message
-         You are invited to subscribe to topic: urn:smn:regionId:d91989905b8449b896f3a4f0ad57222d:demo. To confirm this subscription, Please visit the following SubscribeURL in this message.
+         You are invited to subscribe to topic: urn:smn:regionId:d91989905b8449b896f3a4f0ad57222d:demo. To confirm this subscription, please visit the following SubscribeURL in this message.
          message_id
          def5c309cbff44d5a870787ed937edf8
          subscribe_url
@@ -98,3 +94,7 @@ After receiving an HTTP/HTTPS message, check it with the following procedure:
          urn:smn:regionId:d91989905b8449b896f3a4f0ad57222d:demo
          type
          SubscriptionConfirmation
+
+      .. note::
+
+         Each parameter occupies a line, with its value following in the next line.

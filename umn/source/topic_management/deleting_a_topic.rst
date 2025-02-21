@@ -9,7 +9,7 @@ Deleting a Topic
 
 #. Click |image1| on the upper left to select the desired region and project.
 
-#. Under **Application**, select **Simple Message Notification**.
+#. Select **Simple Message Notification** under **Application**.
 
    The SMN console is displayed.
 
@@ -17,7 +17,9 @@ Deleting a Topic
 
    The **Topics** page is displayed.
 
-#. Locate a topic, click **More** under **Operation**, and select **Delete**.
+#. Locate a topic, click **More** in the **Operation** column, and select **Delete**.
+
+#. In the displayed **Delete Topic** dialog box, click **OK**.
 
 .. note::
 
