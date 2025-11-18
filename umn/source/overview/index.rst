@@ -9,7 +9,7 @@ Overview
 -  :ref:`Service Advantages <smn_pd_23000>`
 -  :ref:`Application Scenarios <smn_pd_22000>`
 -  :ref:`Accessing and Using SMN <smn_pd_25000>`
--  :ref:`Permissions <smn_ug_0034>`
+-  :ref:`Permissions <smn_ug_0034_1>`
 -  :ref:`SMN and Other Services <smn_pd_24000>`
 -  :ref:`Concepts <smn_pd_28000>`
 -  :ref:`Region and AZ <en-us_topic_0000001409933861>`

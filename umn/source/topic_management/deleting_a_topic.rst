@@ -9,7 +9,7 @@ Deleting a Topic
 
 #. Click |image1| on the upper left to select the desired region and project.
 
-#. Select **Simple Message Notification** under **Application**.
+#. Select **Application** > **Simple Message Notification**.
 
    The SMN console is displayed.
 

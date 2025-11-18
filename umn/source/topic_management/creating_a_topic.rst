@@ -18,7 +18,7 @@ Creating a Topic
 
 #. In the upper left corner of the page, click |image1| and select the desired region and project.
 
-#. Select **Simple Message Notification** under **Application**.
+#. Select **Application** > **Simple Message Notification**.
 
    The SMN console is displayed.
 
@@ -49,7 +49,7 @@ Creating a Topic
       |                                   | -  Contains 1 to 255 characters.                                                                                                                                                                     |
       |                                   | -  Must be unique and cannot be modified once the topic is created.                                                                                                                                  |
       +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-      | Display Name                      | Message sender name, which can contain up to 192 bytes                                                                                                                                               |
+      | Display Name                      | Message sender name, which can contain up to 192 characters                                                                                                                                          |
       |                                   |                                                                                                                                                                                                      |
       |                                   | .. note::                                                                                                                                                                                            |
       |                                   |                                                                                                                                                                                                      |

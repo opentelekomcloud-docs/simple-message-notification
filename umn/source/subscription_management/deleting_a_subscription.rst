@@ -17,7 +17,7 @@ Deleting a Subscription on the Topic Details Page
 
 #. Click |image1| on the upper left to select the desired region and project.
 
-#. Select **Simple Message Notification** under **Application**.
+#. Select **Application** > **Simple Message Notification**.
 
    The SMN console is displayed.
 
@@ -35,7 +35,7 @@ Deleting a Subscription on the Topic Details Page
 
    Alternatively, locate the subscription to be deleted and click **Delete** in the **Operation** column.
 
-#. In the displayed **Delete Subscription** dialog box, click **OK**.
+#. In the displayed dialog box, click **OK**.
 
 Deleting a Subscription on the Subscription Page
 ------------------------------------------------
@@ -44,7 +44,7 @@ Deleting a Subscription on the Subscription Page
 
 #. Click |image2| on the upper left to select the desired region and project.
 
-#. Select **Simple Message Notification** under **Application**.
+#. Select **Application** > **Simple Message Notification**.
 
    The SMN console is displayed.
 
@@ -54,7 +54,7 @@ Deleting a Subscription on the Subscription Page
 
    Alternatively, locate the subscription to be deleted and click **Delete** in the **Operation** column.
 
-#. In the displayed **Delete Subscription** dialog box, click **OK**.
+#. In the displayed dialog box, click **OK**.
 
 .. |image1| image:: /_static/images/en-us_image_0259222475.png
 .. |image2| image:: /_static/images/en-us_image_0000001798236268.png

@@ -14,7 +14,7 @@ Configuring Topic Policies in Basic Mode
 
 #. In the upper left corner of the page, click |image1| and select the desired region and project.
 
-#. Select **Simple Message Notification** under **Application**.
+#. Select **Application** > **Simple Message Notification**.
 
    The SMN console is displayed.
 

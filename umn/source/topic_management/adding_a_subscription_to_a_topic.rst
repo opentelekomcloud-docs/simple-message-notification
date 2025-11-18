@@ -17,7 +17,7 @@ Adding a Subscription
 
 #. In the upper left corner of the page, click |image1| and select the desired region and project.
 
-#. Select **Simple Message Notification** under **Application**.
+#. Select **Application** > **Simple Message Notification**.
 
    The SMN console is displayed.
 
@@ -46,7 +46,7 @@ Adding a Subscription
       +===================================+=========================================================================================================================================================================================================================================================+
       | Topic Name                        | Specifies the name of the topic to which messages are published.                                                                                                                                                                                        |
       +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-      | Protocol                          | Specifies the protocol over which messages are sent. Possible values are **SMS**, **HTTP**, **HTTPS**, **FunctionGraph (function)**, and **Email**.                                                                                                     |
+      | Protocol                          | Specifies the protocol over which messages are sent. Possible values are **SMS**, **FunctionGraph (function)**, **Email**, **HTTP**, and **HTTPS**.                                                                                                     |
       +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
       | Endpoint                          | Specifies the subscription endpoint. You can add up to 10 SMS, email, HTTP, or HTTPS endpoints, one in each line.                                                                                                                                       |
       |                                   |                                                                                                                                                                                                                                                         |
@@ -90,13 +90,13 @@ Adding a Subscription
       |                                   |                                                                                                                                                                                                                                                         |
       |                                   | The value of **Key** must:                                                                                                                                                                                                                              |
       |                                   |                                                                                                                                                                                                                                                         |
-      |                                   | -  be case insensitive and unique.                                                                                                                                                                                                                      |
-      |                                   | -  start with **x-** but cannot start with **x-smn**.                                                                                                                                                                                                   |
-      |                                   | -  contain only digits, letters, and hyphens (-), but not end with a hyphen nor contain consecutive hyphens.                                                                                                                                            |
+      |                                   | -  Be case insensitive and unique.                                                                                                                                                                                                                      |
+      |                                   | -  Start with **x-** but cannot start with **x-smn**.                                                                                                                                                                                                   |
+      |                                   | -  Contain only digits, letters, and hyphens (-), but not end with a hyphen nor contain consecutive hyphens.                                                                                                                                            |
       +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
       | Version                           | This parameter is only available if **FunctionGraph (function)** is selected for **Protocol**. Select the version for the function.                                                                                                                     |
       +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-      | Description                       | Specifies the remarks of the subscription.                                                                                                                                                                                                              |
+      | Description                       | Enter the remarks for the subscription. The remarks can contain a maximum of 128 characters.                                                                                                                                                            |
       +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 #. Click **OK**.

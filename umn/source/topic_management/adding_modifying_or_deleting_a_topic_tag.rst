@@ -20,7 +20,7 @@ Adding Tags to a Topic
 
 #. In the upper left corner of the page, click |image1| and select the desired region and project.
 
-#. Select **Simple Message Notification** under **Application**.
+#. Select **Application** > **Simple Message Notification**.
 
    The SMN console is displayed.
 
@@ -58,7 +58,7 @@ Modifying a Topic Tag
 
 #. In the upper left corner of the page, click |image2| and select the desired region and project.
 
-#. Select **Simple Message Notification** under **Application**.
+#. Select **Application** > **Simple Message Notification**.
 
    The SMN console is displayed.
 
@@ -89,7 +89,7 @@ Deleting a Topic Tag
 
 #. In the upper left corner of the page, click |image3| and select the desired region and project.
 
-#. Select **Simple Message Notification** under **Application**.
+#. Select **Application** > **Simple Message Notification**.
 
    The SMN console is displayed.
 
