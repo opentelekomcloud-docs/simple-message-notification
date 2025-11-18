@@ -21,7 +21,7 @@ Change History
 +-----------------------------------+---------------------------------------------------------------------------------------------------+
 | 2023-03-31                        | This issue incorporates the following changes:                                                    |
 |                                   |                                                                                                   |
-|                                   | -  Added :ref:`Permissions <smn_ug_0034>` in *Service Overview*.                                  |
+|                                   | -  Added :ref:`Permissions <smn_ug_0034_1>` in *Service Overview*.                                |
 |                                   | -  Added :ref:`Permissions Management <smn_ug_0035>` in *Simple Message Notification User Guide*. |
 +-----------------------------------+---------------------------------------------------------------------------------------------------+
 | 2019-09-30                        | This issue incorporates the following change:                                                     |

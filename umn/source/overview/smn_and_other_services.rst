@@ -17,10 +17,10 @@ The following are examples of some services using SMN.
 
    Anti-DDoS uses SMN to notify users by email or SMS message once a DDoS attack occurs.
 
--  `CTS <https://docs.otc.t-systems.com/en-us/usermanual/cts/en-us_topic_0030579718.html>`__
+-  `Cloud Trace Service (CTS) <https://docs.otc.t-systems.com/en-us/usermanual/cts/en-us_topic_0030579718.html>`__
 
    CTS can be integrated with SMN to notify users of key events. SMN also uses CTS to record service resource operations.
 
--  `OBS <https://docs.otc.t-systems.com/en-us/usermanual/obs/en-us_topic_0045853692.html>`__
+-  `Object Storage Service (OBS) <https://docs.otc.t-systems.com/en-us/usermanual/obs/en-us_topic_0045853692.html>`__
 
    OBS uses SMN to send OBS bucket events to applications for processing.

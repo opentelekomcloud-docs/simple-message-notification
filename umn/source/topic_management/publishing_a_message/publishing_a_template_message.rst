@@ -12,7 +12,7 @@ Message templates contain fixed message content. If you need to send the same or
 
 You can create different templates for different protocols using the same template name so that each type of subscribers can receive customized messages. Templates contain variables as the placeholders to represent changeable content that you can replace with your own message content. Note that you must create a template whose **Protocol** is **Default**, or the system will prevent you from publishing messages using this template name.
 
-When you are creating messages using a template, select a template name. The system will list all variables in the following protocol sequence: **Default**, **SMS**, **Email**, **FunctionGraph (function),** **HTTP**, and **HTTPS**. The same variables are listed only once even if they are used in multiple protocols, and the protocols they support are listed after each variable. Specify content for each variable in the message template, and SMN replaces them with the content you entered. If you do not enter any content for a variable, the system will treat it as empty when sending messages. SMN tries to match different types of subscribers to the template protocols. If there is no template for a specified protocol, SMN will use the default template to send messages to subscribers of that protocol.
+When you are creating messages using a template, select a template name. The system will list all variables in the following protocol sequence: **Default**, **SMS**, , **Email**, **FunctionGraph (function)**, **HTTP**, **HTTPS**. The same variables are listed only once even if they are used in multiple protocols, and the protocols they support are listed after each variable. Specify content for each variable in the message template, and SMN replaces them with the content you entered. If you do not enter any content for a variable, the system will treat it as empty when sending messages. SMN tries to match different types of subscribers to the template protocols. If there is no template for a specified protocol, SMN will use the default template to send messages to subscribers of that protocol.
 
 This section describes how to publish messages using a template. For more details about message templates, see :ref:`Message Template Management <en-us_topic_0043394889>`.
 
@@ -28,13 +28,13 @@ Creating a Message Template
 
 #. Click |image1| on the upper left to select the desired region and project.
 
-#. Select **Simple Message Notification** under **Application**.
+#. Select **Application** > **Simple Message Notification**.
 
    The SMN console is displayed.
 
 #. In the navigation pane on the left, choose **Message Templates**.
 
-   The **Topics** page is displayed.
+   The **Message Templates** tab page is displayed.
 
 #. In the upper right corner, click **Create Message Template**. For details, see :ref:`Creating a Message Template <en-us_topic_0043394889__section66624127194914>` in :ref:`Message Template Management <en-us_topic_0043394889>`.
 

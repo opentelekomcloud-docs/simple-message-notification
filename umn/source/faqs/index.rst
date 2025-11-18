@@ -7,7 +7,7 @@ FAQs
 
 -  :ref:`What Protocols Does SMN Support? <smn_faq_0003>`
 -  :ref:`What Are the Requirements for an SMN Topic Name? <smn_faq_0005>`
--  :ref:`What Are Most Frequently Asked Questions About Creating, Subscribing to, and Publishing a Topic in SMN? <smn_faq_0006>`
+-  :ref:`What Are Most Frequently Asked Questions About Creating, Publishing, and Subscribing to a Topic in SMN? <smn_faq_0006>`
 -  :ref:`Does SMN Ensure That Messages Are Received by Subscription Endpoints? <smn_faq_0014>`
 -  :ref:`Why Do Subscribers Fail to Receive Messages After I Publish Messages to a Topic? <smn_faq_0016>`
 -  :ref:`What Are the Restrictions and Limitations on SMS Messaging? <smn_faq_0017>`
@@ -21,7 +21,7 @@ FAQs
 
    what_protocols_does_smn_support
    what_are_the_requirements_for_an_smn_topic_name
-   what_are_most_frequently_asked_questions_about_creating_subscribing_to_and_publishing_a_topic_in_smn
+   what_are_most_frequently_asked_questions_about_creating_publishing_and_subscribing_to_a_topic_in_smn
    does_smn_ensure_that_messages_are_received_by_subscription_endpoints
    why_do_subscribers_fail_to_receive_messages_after_i_publish_messages_to_a_topic
    what_are_the_restrictions_and_limitations_on_sms_messaging

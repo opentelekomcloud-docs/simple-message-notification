@@ -5,8 +5,8 @@
 Permissions Management
 ======================
 
--  :ref:`Creating a User and Granting SMN Permissions <smn_ug_0037>`
--  :ref:`Creating SMN Custom Policies <smn_ug_0038>`
+-  :ref:`Creating a User and Granting SMN Permissions <smn_ug_0037_1>`
+-  :ref:`Creating SMN Custom Policies <smn_ug_0038_1>`
 
 .. toctree::
    :maxdepth: 1

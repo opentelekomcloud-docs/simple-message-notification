@@ -18,7 +18,7 @@ Modifying the Display Name of a Topic
 
 #. In the upper left corner of the page, click |image1| and select the desired region and project.
 
-#. Select **Simple Message Notification** under **Application**.
+#. Select **Application** > **Simple Message Notification**.
 
    The SMN console is displayed.
 
@@ -28,7 +28,7 @@ Modifying the Display Name of a Topic
 
 #. Locate the topic, choose **More** > **Modify Display Name** in the **Operation** column. In the displayed **Modify Display Name** dialog box, enter a new display name.
 
-   Alternatively, locate the topic and click its name. In the **Topic Details** area, click |image2| and enter a new display name.
+   Alternatively, locate the topic and click its name. In the **Topic Details** area, click\ |image2| and enter a new display name.
 
    .. note::
 

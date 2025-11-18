@@ -10,7 +10,7 @@ Scenarios
 
 Message templates contain fixed and changeable content and can be used to create messages more quickly. When you use a template to publish a message, you need to specify values for different variables in the template.
 
-Message templates are identified by name, but you can create different templates with the same name as long as they are configured for different protocols. All template messages must include a **Default** template or they cannot be sent out. The **Default** template is used anytime a template has not been configured for a given protocol, but as long as there is a template for the protocol, then any subscriber who selected that protocol when they subscribed will receive a message using the corresponding template.
+Message templates are identified by name, but you can create different templates with the same name as long as they are configured for different protocols. You must create a **Default** template with the same name as each custom template. The **Default** template is used when no specific template has been set for a given protocol. If a template is configured for a specific protocol, any subscriber who chose that protocol during subscription will receive messages using that specific template. If you create a custom template but do not create a default template with the same name, you cannot use the custom template to publish messages.
 
 This section describes how to publish messages using a template.
 
@@ -23,7 +23,7 @@ Creating a Message Template
 
 #. Click |image1| on the upper left to select the desired region and project.
 
-#. Select **Simple Message Notification** under **Application**.
+#. Select **Application** > **Simple Message Notification**.
 
    The SMN console is displayed.
 

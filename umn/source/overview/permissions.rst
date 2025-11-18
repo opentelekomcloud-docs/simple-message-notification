@@ -1,6 +1,6 @@
-:original_name: smn_ug_0034.html
+:original_name: smn_ug_0034_1.html
 
-.. _smn_ug_0034:
+.. _smn_ug_0034_1:
 
 Permissions
 ===========
@@ -24,12 +24,12 @@ SMN is a project-level service deployed and accessed in specific physical region
 
 You can grant users permissions by using roles and policies.
 
--  Roles: a type of coarse-grained authorization mechanism that provides only a limited number of service-level roles When using roles to grant permissions, you need to also assign other roles on which the permissions depend to take effect. However, roles are not an ideal choice for fine-grained authorization and secure access control.
--  Policies: a type of fine-grained authorization mechanism that defines permissions required to perform operations on specific cloud resources under certain conditions This mechanism allows for more flexible policy-based authorization for secure access control. For example, you can grant SMN users only the permissions for managing a certain type of SMN resources. Most policies define permissions based on APIs. For the API actions supported by SMN, see section "Permissions Policies and Supported Actions" in the *Simple Message Notification API Reference*.
+-  Roles: a type of coarse-grained authorization that provides only a limited number of service-level roles Services depend on each other. When granting permissions using roles, assign other dependent roles to users. However, roles are not an ideal choice for fine-grained authorization and secure access control.
+-  Policies: a type of fine-grained authorization that defines permissions required to perform operations on specific cloud resources under certain conditions This authorization allows for more flexible policy-based authorization for secure access control. For example, you can grant SMN users only the permissions for managing a certain type of SMN resources. Most policies define permissions based on APIs. For the API actions supported by SMN, see section "Permissions Policies and Supported Actions" in the *Simple Message Notification API Reference*.
 
-:ref:`Table 1 <smn_ug_0034__en-us_topic_0173524723_en-us_topic_0173475706_en-us_topic_0170232209_table481412518317>` lists all system-defined policies supported by SMN.
+:ref:`Table 1 <smn_ug_0034_1__en-us_topic_0173524723_en-us_topic_0173475706_en-us_topic_0170232209_table481412518317>` lists all system-defined policies supported by SMN.
 
-.. _smn_ug_0034__en-us_topic_0173524723_en-us_topic_0173475706_en-us_topic_0170232209_table481412518317:
+.. _smn_ug_0034_1__en-us_topic_0173524723_en-us_topic_0173475706_en-us_topic_0170232209_table481412518317:
 
 .. table:: **Table 1** System-defined policies supported by SMN
 
@@ -45,9 +45,9 @@ You can grant users permissions by using roles and policies.
    |                    | Users granted these permissions can only view SMN data.                                                         |                       |                                                                                               |
    +--------------------+-----------------------------------------------------------------------------------------------------------------+-----------------------+-----------------------------------------------------------------------------------------------+
 
-:ref:`Table 2 <smn_ug_0034__table13641113421711>` lists the common operations supported by each SMN system policy or role. Select the policies or roles as needed.
+:ref:`Table 2 <smn_ug_0034_1__table13641113421711>` lists the common operations supported by each SMN system policy or role. Select the policies or roles as needed.
 
-.. _smn_ug_0034__table13641113421711:
+.. _smn_ug_0034_1__table13641113421711:
 
 .. table:: **Table 2** Common operations supported by each system-defined policy or role of SMN
 

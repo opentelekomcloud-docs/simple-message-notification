@@ -2,7 +2,7 @@
 
 .. _smn_faq_0006:
 
-What Are Most Frequently Asked Questions About Creating, Subscribing to, and Publishing a Topic in SMN?
+What Are Most Frequently Asked Questions About Creating, Publishing, and Subscribing to a Topic in SMN?
 =======================================================================================================
 
 How Many Topics Can I Create?

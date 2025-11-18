@@ -1,6 +1,6 @@
-:original_name: smn_ug_0038.html
+:original_name: smn_ug_0038_1.html
 
-.. _smn_ug_0038:
+.. _smn_ug_0038_1:
 
 Creating SMN Custom Policies
 ============================
@@ -12,7 +12,7 @@ You can create custom policies in either of the following ways:
 -  Visual editor: Select cloud services, actions, resources, and request conditions. This does not require knowledge of policy syntax.
 -  JSON: Create a JSON policy or edit an existing one.
 
-The following are examples of custom policies created for SMN. .
+The following are examples of custom policies created for SMN. For details, see `Creating a Custom Policy <https://docs.otc.t-systems.com/identity-access-management/umn/user_guide/permissions/creating_a_custom_policy.html>`__.
 
 Example SMN Custom Policies
 ---------------------------
