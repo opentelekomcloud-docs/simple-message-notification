@@ -5,7 +5,7 @@
 Public Parameters
 =================
 
--  :ref:`General Request Return Code <smn_api_63000>`
+-  :ref:`Returned Values for General Requests <smn_api_63000>`
 -  :ref:`Error Codes <smn_api_64000>`
 -  :ref:`Obtaining a Project ID <smn_api_66000>`
 
@@ -13,6 +13,6 @@ Public Parameters
    :maxdepth: 1
    :hidden: 
 
-   general_request_return_code/index
+   returned_values_for_general_requests/index
    error_codes
    obtaining_a_project_id

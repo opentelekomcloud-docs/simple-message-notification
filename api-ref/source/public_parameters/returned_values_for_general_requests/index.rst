@@ -2,8 +2,8 @@
 
 .. _smn_api_63000:
 
-General Request Return Code
-===========================
+Returned Values for General Requests
+====================================
 
 -  :ref:`Exception Response <smn_api_63001>`
 -  :ref:`Returned Value <smn_api_63002>`

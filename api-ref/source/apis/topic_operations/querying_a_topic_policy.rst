@@ -21,7 +21,7 @@ URI
 
 -  URI format
 
-   GET /v2/{project_id}/notifications/topics/{topic_urn}/attributes?name={name}
+   GET /v2/{project_id}/notifications/topics/{topic_urn}/attributes
 
 -  Parameter description
 

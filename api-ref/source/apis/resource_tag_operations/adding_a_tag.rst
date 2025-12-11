@@ -43,7 +43,7 @@ URI
    |                 |                 |                 | Obtain a resource ID:                                                                                  |
    |                 |                 |                 |                                                                                                        |
    |                 |                 |                 | -  Add **X-SMN-RESOURCEID-TYPE=name** in the request header and set the resource ID to the topic name. |
-   |                 |                 |                 | -  Call the **GetResourceInstances** API to obtain the resource ID.                                    |
+   |                 |                 |                 | -  Call the API for :ref:`querying topics by tag <smn_api_56001>` to obtain the resource ID.           |
    +-----------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------+
 
 Request
@@ -61,13 +61,19 @@ Request
 
    .. table:: **Table 1** Resource_tag structure
 
-      +-----------+--------+-------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-      | Parameter | Type   | Description | Constraint                                                                                                                                                                                     |
-      +===========+========+=============+================================================================================================================================================================================================+
-      | key       | String | Tag key     | A key can contain up to 36 Unicode characters, including only digits, letters, hyphens (-), and underscores (_). A key cannot be left blank, be an empty string, or start or end with a space. |
-      +-----------+--------+-------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-      | value     | String | Tag value   | A value can contain up to 43 Unicode characters, including only digits, letters, hyphens (-), and underscores (_). A value can be an empty string, but it cannot start or end with a space.    |
-      +-----------+--------+-------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      +-----------------+-----------------+-----------------+---------------------------------------------------------------+
+      | Parameter       | Mandatory       | Type            | Description                                                   |
+      +=================+=================+=================+===============================================================+
+      | key             | Yes             | String          | The tag key.                                                  |
+      |                 |                 |                 |                                                               |
+      |                 |                 |                 | -  A tag key can contain a maximum of 127 Unicode characters. |
+      |                 |                 |                 |                                                               |
+      |                 |                 |                 | -  **key** cannot be left blank.                              |
+      +-----------------+-----------------+-----------------+---------------------------------------------------------------+
+      | value           | Yes             | String          | The tag value.                                                |
+      |                 |                 |                 |                                                               |
+      |                 |                 |                 | -  Each value contains a maximum of 255 Unicode characters.   |
+      +-----------------+-----------------+-----------------+---------------------------------------------------------------+
 
 -  Example request
 

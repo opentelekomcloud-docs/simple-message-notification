@@ -21,7 +21,7 @@ URI
 
 -  URI format
 
-   GET /v2/{project_id}/notifications/topics/{topic_urn}/subscriptions?offset={offset}&limit={limit}
+   GET /v2/{project_id}/notifications/topics/{topic_urn}/subscriptions
 
 -  Parameter description
 

@@ -41,7 +41,7 @@ URI
    |                 |                 |                 | Obtain a resource ID:                                                                                  |
    |                 |                 |                 |                                                                                                        |
    |                 |                 |                 | -  Add **X-SMN-RESOURCEID-TYPE=name** in the request header and set the resource ID to the topic name. |
-   |                 |                 |                 | -  Call the **GetResourceInstances** API to obtain the resource ID.                                    |
+   |                 |                 |                 | -  Call the API for :ref:`querying topics by tag <smn_api_56001>` to obtain the resource ID.           |
    +-----------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------+
 
 Request

@@ -21,7 +21,7 @@ URI
 
 -  URI format
 
-   GET /v2/{project_id}/notifications/topics?offset={offset}&limit={limit}
+   GET /v2/{project_id}/notifications/topics
 
 -  Parameter description
 
@@ -36,13 +36,15 @@ URI
    |                 |                 |                 |                                                                                                                                                                 |
    |                 |                 |                 | If the offset is an integer greater than 0 but less than the number of resources, all resources after this offset will be queried. The default offset is **0**. |
    +-----------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | limit           | No              | Integer         | -  Number of resources returned on each page                                                                                                                    |
+   | limit           | No              | Integer         | The maximum number of records return on each page                                                                                                               |
    |                 |                 |                 |                                                                                                                                                                 |
-   |                 |                 |                 | -  Value range: 1-100                                                                                                                                           |
+   |                 |                 |                 | Value range: 1-100                                                                                                                                              |
    |                 |                 |                 |                                                                                                                                                                 |
-   |                 |                 |                 |    Commonly used numbers are **10**, **20**, and **50**.                                                                                                        |
+   |                 |                 |                 | Common values: **10**, **20**, and **50**                                                                                                                       |
    |                 |                 |                 |                                                                                                                                                                 |
-   |                 |                 |                 |    The default number is **100**.                                                                                                                               |
+   |                 |                 |                 | Default value: **100**                                                                                                                                          |
+   +-----------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | topic_id        | No              | String          | The ID of the topic to be searched for, which is fully matched                                                                                                  |
    +-----------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Request
@@ -93,6 +95,16 @@ Response
       +-----------------------+-----------------------+------------------------------------------------------------------------------------------+
       | enterprise_project_id | String                | Enterprise project ID                                                                    |
       +-----------------------+-----------------------+------------------------------------------------------------------------------------------+
+      | topic_id              | String                | Topic ID                                                                                 |
+      +-----------------------+-----------------------+------------------------------------------------------------------------------------------+
+      | create_time           | String                | The time when the topic was created                                                      |
+      |                       |                       |                                                                                          |
+      |                       |                       | The UTC time is in *YYYY-MM-DDTHH:MM:SSZ* format.                                        |
+      +-----------------------+-----------------------+------------------------------------------------------------------------------------------+
+      | update_time           | String                | The time when the topic was updated                                                      |
+      |                       |                       |                                                                                          |
+      |                       |                       | The UTC time is in *YYYY-MM-DDTHH:MM:SSZ* format.                                        |
+      +-----------------------+-----------------------+------------------------------------------------------------------------------------------+
 
 -  Example response
 
@@ -108,6 +120,9 @@ Response
                   "name": "test_topic_v1",
                   "push_policy": 0,
                   "enterprise_project_id" : "0"
+                  "topic_id" : "84698185946d44d08431aa441d8e2cf2"
+                  "create_time": "2016-08-01T02:16:38Z",
+                  "update_time": "2016-08-01T02:16:38Z"
               }
           ]
       }
