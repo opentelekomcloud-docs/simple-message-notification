@@ -25,7 +25,7 @@ URI
 
 -  URI format
 
-   GET /v2/{project_id}/notifications/message_template?offset={offset}&limit={limit}&message_template_name={message_template_name}&protocol={protocol}
+   GET /v2/{project_id}/notifications/message_template
 
 -  Parameter description
 

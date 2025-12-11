@@ -25,7 +25,7 @@ IAM provides system-defined policies that can be directly used. You can also cre
 -  Permissions: statements in a policy that allow or deny certain operations.
 -  APIs: REST APIs that can be called by a user who has been granted specific permissions.
 -  Actions: specific operations that are allowed or denied.
--  Related actions: actions on which a specific action depends to take effect. When assigning permissions for the action to a user, you also need to assign permissions for the dependent actions.
+-  Dependencies: actions which a specific action depends on. When allowing an action for a user, you also need to allow any existing action dependencies for that user.
 -  IAM or enterprise projects: type of projects for which an action will take effect. Policies that contain actions for both IAM and enterprise projects can be used and applied for both IAM and Enterprise Management. Policies that only contain actions for IAM projects can be used and only take effect for IAM. Administrators can check whether an action supports IAM projects or enterprise projects in the action list. "Y" indicates that the action supports the project and "x" indicates that the action does not support the project.
 
 SMN supports the following actions that can be defined in custom policies:
