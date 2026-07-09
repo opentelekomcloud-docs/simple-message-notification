@@ -5,25 +5,21 @@
 Querying Topics
 ===============
 
-Description
------------
+Function
+--------
 
--  API name
-
-   ListTopics
-
--  Function
-
-   Query the topics by page. The topics are sorted by the creation time in descending order. When querying the topics by page, you can specify **offset** and **limit**. If no topic has been created, an empty list is returned.
+Query the topics by page. The topics are sorted by the creation time in descending order. When querying the topics by page, you can specify **offset** and **limit**. If no topic has been created, an empty list is returned.
 
 URI
 ---
 
--  URI format
+GET /v2/{project_id}/notifications/topics
 
-   GET /v2/{project_id}/notifications/topics
+For details, see :ref:`Table 1 <en-us_topic_0036016755__table65858198>`.
 
--  Parameter description
+.. _en-us_topic_0036016755__table65858198:
+
+.. table:: **Table 1** URI parameters
 
    +-----------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | Parameter       | Mandatory       | Type            | Description                                                                                                                                                     |
@@ -36,7 +32,7 @@ URI
    |                 |                 |                 |                                                                                                                                                                 |
    |                 |                 |                 | If the offset is an integer greater than 0 but less than the number of resources, all resources after this offset will be queried. The default offset is **0**. |
    +-----------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | limit           | No              | Integer         | The maximum number of records return on each page                                                                                                               |
+   | limit           | No              | Integer         | The maximum number of records returned on each page                                                                                                             |
    |                 |                 |                 |                                                                                                                                                                 |
    |                 |                 |                 | Value range: 1-100                                                                                                                                              |
    |                 |                 |                 |                                                                                                                                                                 |
@@ -50,16 +46,16 @@ URI
 Request
 -------
 
-Example request
-
-.. code-block:: text
-
-   GET https://{SMN_Endpoint}/v2/{project_id}/notifications/topics?offset=0&limit=100
+None
 
 Response
 --------
 
--  Parameter description
+:ref:`Table 2 <en-us_topic_0036016755__table32894845>` describes the response parameters.
+
+.. _en-us_topic_0036016755__table32894845:
+
+.. table:: **Table 2** Response parameters
 
    +-----------------------+-------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
    | Parameter             | Type                                                                          | Description                                                                                                                                     |
@@ -72,60 +68,68 @@ Response
    |                       |                                                                               |                                                                                                                                                 |
    |                       |                                                                               |    No matter what you have set for **offset** and **limit** in the request, this API always returns the total number of topics in your account. |
    +-----------------------+-------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-   | topics                | Array of :ref:`Table 1 <en-us_topic_0036016755__table10636317195533>` objects | Topic structure array                                                                                                                           |
+   | topics                | Array of :ref:`Table 3 <en-us_topic_0036016755__table10636317195533>` objects | Topic structure array                                                                                                                           |
    +-----------------------+-------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 
-   .. _en-us_topic_0036016755__table10636317195533:
+.. _en-us_topic_0036016755__table10636317195533:
 
-   .. table:: **Table 1** Topic structure
+.. table:: **Table 3** Topic structure
 
-      +-----------------------+-----------------------+------------------------------------------------------------------------------------------+
-      | Parameter             | Type                  | Description                                                                              |
-      +=======================+=======================+==========================================================================================+
-      | topic_urn             | String                | Resource identifier of a topic, which is unique                                          |
-      +-----------------------+-----------------------+------------------------------------------------------------------------------------------+
-      | name                  | String                | Name of the topic                                                                        |
-      +-----------------------+-----------------------+------------------------------------------------------------------------------------------+
-      | display_name          | String                | Topic display name, which is presented as the name of the email sender in email messages |
-      +-----------------------+-----------------------+------------------------------------------------------------------------------------------+
-      | push_policy           | Integer               | Message push policy                                                                      |
-      |                       |                       |                                                                                          |
-      |                       |                       | -  **0**: Failed messages will be saved in message queues.                               |
-      |                       |                       | -  **1**: Failed messages will be discarded.                                             |
-      +-----------------------+-----------------------+------------------------------------------------------------------------------------------+
-      | enterprise_project_id | String                | Enterprise project ID                                                                    |
-      +-----------------------+-----------------------+------------------------------------------------------------------------------------------+
-      | topic_id              | String                | Topic ID                                                                                 |
-      +-----------------------+-----------------------+------------------------------------------------------------------------------------------+
-      | create_time           | String                | The time when the topic was created                                                      |
-      |                       |                       |                                                                                          |
-      |                       |                       | The UTC time is in *YYYY-MM-DDTHH:MM:SSZ* format.                                        |
-      +-----------------------+-----------------------+------------------------------------------------------------------------------------------+
-      | update_time           | String                | The time when the topic was updated                                                      |
-      |                       |                       |                                                                                          |
-      |                       |                       | The UTC time is in *YYYY-MM-DDTHH:MM:SSZ* format.                                        |
-      +-----------------------+-----------------------+------------------------------------------------------------------------------------------+
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------+
+   | Parameter             | Type                  | Description                                                                              |
+   +=======================+=======================+==========================================================================================+
+   | topic_urn             | String                | Resource identifier of a topic, which is unique                                          |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------+
+   | name                  | String                | Name of the topic                                                                        |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------+
+   | display_name          | String                | Topic display name, which is presented as the name of the email sender in email messages |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------+
+   | push_policy           | Integer               | Message push policy                                                                      |
+   |                       |                       |                                                                                          |
+   |                       |                       | -  **0**: Failed messages will be saved in message queues.                               |
+   |                       |                       | -  **1**: Failed messages will be discarded.                                             |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------+
+   | enterprise_project_id | String                | Enterprise project ID                                                                    |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------+
+   | topic_id              | String                | Topic ID                                                                                 |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------+
+   | create_time           | String                | The time when the topic was created                                                      |
+   |                       |                       |                                                                                          |
+   |                       |                       | The UTC time is in *YYYY-MM-DDTHH:MM:SSZ* format.                                        |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------+
+   | update_time           | String                | The time when the topic was updated                                                      |
+   |                       |                       |                                                                                          |
+   |                       |                       | The UTC time is in *YYYY-MM-DDTHH:MM:SSZ* format.                                        |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------+
 
--  Example response
+Example Request
+---------------
 
-   .. code-block::
+.. code-block:: text
 
-      {
-          "request_id": "70bb40bef50e4a14b116a5a527fd7432",
-          "topic_count": 1,
-          "topics": [
-              {
-                  "topic_urn": "urn:smn:regionId:8bad8a40e0f7462f8c1676e3f93a8183:test_topic_v2",
-                  "display_name": "testtest",
-                  "name": "test_topic_v1",
-                  "push_policy": 0,
-                  "enterprise_project_id" : "0"
-                  "topic_id" : "84698185946d44d08431aa441d8e2cf2"
-                  "create_time": "2016-08-01T02:16:38Z",
-                  "update_time": "2016-08-01T02:16:38Z"
-              }
-          ]
-      }
+   GET https://{SMN_Endpoint}/v2/{project_id}/notifications/topics?offset=0&limit=100
+
+Example Response
+----------------
+
+.. code-block::
+
+   {
+       "request_id": "70bb40bef50e4a14b116a5a527fd7432",
+       "topic_count": 1,
+       "topics": [
+           {
+               "topic_urn": "urn:smn:regionId:8bad8a40e0f7462f8c1676e3f93a8183:test_topic_v2",
+               "display_name": "testtest",
+               "name": "test_topic_v1",
+               "push_policy": 0,
+               "enterprise_project_id" : "0"
+               "topic_id" : "84698185946d44d08431aa441d8e2cf2"
+               "create_time": "2016-08-01T02:16:38Z",
+               "update_time": "2016-08-01T02:16:38Z"
+           }
+       ]
+   }
 
 Returned Value
 --------------

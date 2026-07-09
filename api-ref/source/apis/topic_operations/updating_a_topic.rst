@@ -5,25 +5,21 @@
 Updating a Topic
 ================
 
-Description
------------
+Function
+--------
 
--  API name
-
-   UpdateTopic
-
--  Function
-
-   Update the topic display name.
+Update the topic display name.
 
 URI
 ---
 
--  URI format
+PUT /v2/{project_id}/notifications/topics/{topic_urn}
 
-   PUT /v2/{project_id}/notifications/topics/{topic_urn}
+For details, see :ref:`Table 1 <en-us_topic_0036017301__table20000134185146>`.
 
--  Parameter description
+.. _en-us_topic_0036017301__table20000134185146:
+
+.. table:: **Table 1** URI parameters
 
    +-----------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------------------+
    | Parameter       | Mandatory       | Type            | Description                                                                                                       |
@@ -38,7 +34,11 @@ URI
 Request
 -------
 
--  Parameter description
+:ref:`Table 2 <en-us_topic_0036017301__table16833793185146>` describes the request parameters.
+
+.. _en-us_topic_0036017301__table16833793185146:
+
+.. table:: **Table 2** Request parameters
 
    +-----------------+-----------------+-----------------+------------------------------------------------------------------------------------------+
    | Parameter       | Mandatory       | Type            | Description                                                                              |
@@ -48,19 +48,14 @@ Request
    |                 |                 |                 | The display name cannot exceed 192 bytes.                                                |
    +-----------------+-----------------+-----------------+------------------------------------------------------------------------------------------+
 
--  Example request
-
-   .. code-block:: text
-
-      PUT https://{SMN_Endpoint}/v2/{project_id}/notifications/topics/urn:smn:regionId:f96188c7ccaf4ffba0c9aa149ab2bd57:test_topic_v2
-      {
-          "display_name": "testtest222"
-      }
-
 Response
 --------
 
--  Parameter description
+:ref:`Table 3 <en-us_topic_0036017301__table11342130185146>` describes the response parameters.
+
+.. _en-us_topic_0036017301__table11342130185146:
+
+.. table:: **Table 3** Response parameters
 
    ========== ====== ===========================
    Parameter  Type   Description
@@ -68,13 +63,27 @@ Response
    request_id String Request ID, which is unique
    ========== ====== ===========================
 
--  Example response
+Example Request
+---------------
 
-   .. code-block::
+.. code-block:: text
 
-      {
-          "request_id": "6a63a18b8bab40ffb71ebd9cb80d0085"
-      }
+   PUT https://{SMN_Endpoint}/v2/{project_id}/notifications/topics/urn:smn:regionId:f96188c7ccaf4ffba0c9aa149ab2bd57:test_topic_v2
+
+.. code-block::
+
+   {
+       "display_name": "testtest222"
+   }
+
+Example Response
+----------------
+
+.. code-block::
+
+   {
+       "request_id": "6a63a18b8bab40ffb71ebd9cb80d0085"
+   }
 
 Returned Value
 --------------

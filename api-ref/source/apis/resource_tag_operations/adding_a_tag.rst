@@ -5,27 +5,23 @@
 Adding a Tag
 ============
 
-Description
------------
+Function
+--------
 
--  API name
+You can add a maximum of 20 tags to a resource.
 
-   CreateResourceTag
-
--  Function
-
-   You can add a maximum of 20 tags to a resource.
-
-   The API is idempotent. If a to-be-created tag has the same key as an existing tag, the tag will be created and overwrite the existing one.
+The API is idempotent. If a to-be-created tag has the same key as an existing tag, the tag will be created and overwrite the existing one.
 
 URI
 ---
 
--  URI format
+POST /v2/{project_id}/{resource_type}/{resource_id}/tags
 
-   POST /v2/{project_id}/{resource_type}/{resource_id}/tags
+For details, see :ref:`Table 1 <smn_api_56003__table1029119541182>`.
 
--  Parameter description
+.. _smn_api_56003__table1029119541182:
+
+.. table:: **Table 1** URI parameters
 
    +-----------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------+
    | Parameter       | Mandatory       | Type            | Description                                                                                            |
@@ -49,52 +45,60 @@ URI
 Request
 -------
 
--  Parameter description
+:ref:`Table 2 <smn_api_56003__table2306754131811>` describes the request parameters.
+
+.. _smn_api_56003__table2306754131811:
+
+.. table:: **Table 2** Request parameters
 
    +-----------+-----------+------------------------+---------------------------------------------------------------------------------------+
    | Parameter | Mandatory | Type                   | Description                                                                           |
    +===========+===========+========================+=======================================================================================+
-   | tag       | Yes       | Resource_tag structure | Tag to be added. For details, see :ref:`Table 1 <smn_api_56003__table1127111434346>`. |
+   | tag       | Yes       | Resource_tag structure | Tag to be added. For details, see :ref:`Table 3 <smn_api_56003__table1127111434346>`. |
    +-----------+-----------+------------------------+---------------------------------------------------------------------------------------+
 
-   .. _smn_api_56003__table1127111434346:
+.. _smn_api_56003__table1127111434346:
 
-   .. table:: **Table 1** Resource_tag structure
+.. table:: **Table 3** Resource_tag structure
 
-      +-----------------+-----------------+-----------------+---------------------------------------------------------------+
-      | Parameter       | Mandatory       | Type            | Description                                                   |
-      +=================+=================+=================+===============================================================+
-      | key             | Yes             | String          | The tag key.                                                  |
-      |                 |                 |                 |                                                               |
-      |                 |                 |                 | -  A tag key can contain a maximum of 127 Unicode characters. |
-      |                 |                 |                 |                                                               |
-      |                 |                 |                 | -  **key** cannot be left blank.                              |
-      +-----------------+-----------------+-----------------+---------------------------------------------------------------+
-      | value           | Yes             | String          | The tag value.                                                |
-      |                 |                 |                 |                                                               |
-      |                 |                 |                 | -  Each value contains a maximum of 255 Unicode characters.   |
-      +-----------------+-----------------+-----------------+---------------------------------------------------------------+
-
--  Example request
-
-   .. code-block:: text
-
-      POST https://{SMN_Endpoint}/v2/{project_id}/{resource_type}/{resource_id}/tags
-
--  Example request
-
-   .. code-block::
-
-      {
-           "tag":
-           {
-              "key": "DEV",
-              "value": "DEV1"
-           }
-      }
+   +-----------------+-----------------+-----------------+---------------------------------------------------------------+
+   | Parameter       | Mandatory       | Type            | Description                                                   |
+   +=================+=================+=================+===============================================================+
+   | key             | Yes             | String          | The tag key.                                                  |
+   |                 |                 |                 |                                                               |
+   |                 |                 |                 | -  A tag key can contain a maximum of 128 Unicode characters. |
+   |                 |                 |                 |                                                               |
+   |                 |                 |                 | -  **key** cannot be left blank.                              |
+   +-----------------+-----------------+-----------------+---------------------------------------------------------------+
+   | value           | Yes             | String          | The tag value.                                                |
+   |                 |                 |                 |                                                               |
+   |                 |                 |                 | -  Each value contains a maximum of 255 Unicode characters.   |
+   +-----------------+-----------------+-----------------+---------------------------------------------------------------+
 
 Response
 --------
+
+None
+
+Example Request
+---------------
+
+.. code-block:: text
+
+   POST https://{SMN_Endpoint}/v2/{project_id}/{resource_type}/{resource_id}/tags
+
+.. code-block::
+
+   {
+        "tag":
+        {
+           "key": "DEV",
+           "value": "DEV1"
+        }
+   }
+
+Example Response
+----------------
 
 None
 

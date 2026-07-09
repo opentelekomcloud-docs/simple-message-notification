@@ -5,25 +5,21 @@
 Deleting a Subscription
 =======================
 
-Description
------------
+Function
+--------
 
--  API name
-
-   Unsubscribe
-
--  Function
-
-   Delete a specified subscription.
+Delete a specified subscription.
 
 URI
 ---
 
--  URI format
+DELETE /v2/{project_id}/notifications/subscriptions/{subscription_urn}
 
-   DELETE /v2/{project_id}/notifications/subscriptions/{subscription_urn}
+For details, see :ref:`Table 1 <smn_api_52004__table28631516>`.
 
--  Parameter description
+.. _smn_api_52004__table28631516:
+
+.. table:: **Table 1** URI parameters
 
    +------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------------+
    | Parameter        | Mandatory       | Type            | Description                                                                                                     |
@@ -38,16 +34,16 @@ URI
 Request
 -------
 
-Example request
-
-.. code-block:: text
-
-   DELETE https://{SMN_Endpoint}/v2/{project_id}/notifications/subscriptions/urn:smn:regionId:762bdb3251034f268af0e395c53ea09b:test_topic_v1:2e778e84408e44058e6cbc6d3c377837
+None
 
 Response
 --------
 
--  Parameter description
+:ref:`Table 2 <smn_api_52004__table20831783>` describes the response parameters.
+
+.. _smn_api_52004__table20831783:
+
+.. table:: **Table 2** Response parameters
 
    ========== ====== ===========================
    Parameter  Type   Description
@@ -55,13 +51,21 @@ Response
    request_id String Request ID, which is unique
    ========== ====== ===========================
 
--  Example response
+Example Request
+---------------
 
-   .. code-block::
+.. code-block:: text
 
-      {
-          "request_id": "f3197b274a6b473a8007eed79e716c30"
-      }
+   DELETE https://{SMN_Endpoint}/v2/{project_id}/notifications/subscriptions/urn:smn:regionId:762bdb3251034f268af0e395c53ea09b:test_topic_v1:2e778e84408e44058e6cbc6d3c377837
+
+Example Response
+----------------
+
+.. code-block::
+
+   {
+       "request_id": "f3197b274a6b473a8007eed79e716c30"
+   }
 
 Returned Value
 --------------

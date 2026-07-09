@@ -5,35 +5,31 @@
 Adding or Deleting Tags in Batches
 ==================================
 
-Description
------------
+Function
+--------
 
--  API name
+Add or delete tags for a specified topic in batches.
 
-   BatchCreateOrDeleteResourceTags
+You can add a maximum of 20 tags to a resource.
 
--  Function
+.. note::
 
-   Add or delete tags for a specified topic in batches.
+   The API is idempotent. When you are to create tags, if there are duplicate keys in the request body, an error is reported.
 
-   You can add a maximum of 20 tags to a resource.
+   If a to-be-created tag has the same key as an existing tag, the tag will be created and overwrite the existing one.
 
-   .. note::
-
-      The API is idempotent. When you are to create tags, if there are duplicate keys in the request body, an error is reported.
-
-      If a to-be-created tag has the same key as an existing tag, the tag will be created and overwrite the existing one.
-
-      When tags are being deleted and some tags do not exist, the operation is considered successful by default. The character set of the tags will not be checked.
+   When tags are being deleted and some tags do not exist, the operation is considered successful by default. The character set of the tags will not be checked.
 
 URI
 ---
 
--  URI format
+POST /v2/{project_id}/{resource_type}/{resource_id}/tags/action
 
-   POST /v2/{project_id}/{resource_type}/{resource_id}/tags/action
+For details, see :ref:`Table 1 <smn_api_56002__table4181105410187>`.
 
--  Parameter description
+.. _smn_api_56002__table4181105410187:
+
+.. table:: **Table 1** URI parameters
 
    +-----------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------+
    | Parameter       | Mandatory       | Type            | Description                                                                                            |
@@ -57,45 +53,53 @@ URI
 Request
 -------
 
--  Parameter description
+:ref:`Table 2 <smn_api_56002__table4213165415189>` describes the request parameters.
+
+.. _smn_api_56002__table4213165415189:
+
+.. table:: **Table 2** Request parameters
 
    +-----------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | Parameter       | Mandatory       | Type                         | Description                                                                                                                                                                         |
    +=================+=================+==============================+=====================================================================================================================================================================================+
-   | tags            | Yes             | Resource_tag structure array | Tag list. For details, see :ref:`Table 1 <smn_api_56002__table1127111434346>`.                                                                                                      |
+   | tags            | Yes             | Resource_tag structure array | Tag list. For details, see :ref:`Table 3 <smn_api_56002__table1127111434346>`.                                                                                                      |
    |                 |                 |                              |                                                                                                                                                                                     |
    |                 |                 |                              | When you delete tags, the tag structure cannot be missing, and the key cannot be left blank or be an empty string. The system does not check the character set when deleting a tag. |
    +-----------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | action          | Yes             | String                       | Operation to be performed, which can be **create** or **delete**                                                                                                                    |
    +-----------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-   .. _smn_api_56002__table1127111434346:
+.. _smn_api_56002__table1127111434346:
 
-   .. table:: **Table 1** Resource_tag structure
+.. table:: **Table 3** Resource_tag structure
 
-      +-----------------+-----------------+-----------------+---------------------------------------------------------------+
-      | Parameter       | Mandatory       | Type            | Description                                                   |
-      +=================+=================+=================+===============================================================+
-      | key             | Yes             | String          | The tag key.                                                  |
-      |                 |                 |                 |                                                               |
-      |                 |                 |                 | -  A tag key can contain a maximum of 127 Unicode characters. |
-      |                 |                 |                 |                                                               |
-      |                 |                 |                 | -  **key** cannot be left blank.                              |
-      +-----------------+-----------------+-----------------+---------------------------------------------------------------+
-      | value           | Yes             | String          | The tag value.                                                |
-      |                 |                 |                 |                                                               |
-      |                 |                 |                 | -  Each value contains a maximum of 255 Unicode characters.   |
-      +-----------------+-----------------+-----------------+---------------------------------------------------------------+
+   +-----------------+-----------------+-----------------+---------------------------------------------------------------+
+   | Parameter       | Mandatory       | Type            | Description                                                   |
+   +=================+=================+=================+===============================================================+
+   | key             | Yes             | String          | The tag key.                                                  |
+   |                 |                 |                 |                                                               |
+   |                 |                 |                 | -  A tag key can contain a maximum of 128 Unicode characters. |
+   |                 |                 |                 |                                                               |
+   |                 |                 |                 | -  **key** cannot be left blank.                              |
+   +-----------------+-----------------+-----------------+---------------------------------------------------------------+
+   | value           | Yes             | String          | The tag value.                                                |
+   |                 |                 |                 |                                                               |
+   |                 |                 |                 | -  Each value contains a maximum of 255 Unicode characters.   |
+   +-----------------+-----------------+-----------------+---------------------------------------------------------------+
 
--  Example request
+Response
+--------
 
-   .. code-block:: text
+None
 
-      POST https://{SMN_Endpoint}/v2/{project_id}/{resource_type}/{resource_id}/tags/action
+Example Request
+---------------
 
--  Request body
+.. code-block:: text
 
-   Request body when **action** is set to **create**
+   POST https://{SMN_Endpoint}/v2/{project_id}/{resource_type}/{resource_id}/tags/action
+
+-  Request body when **action** is set to **create**
 
    .. code-block::
 
@@ -113,7 +117,7 @@ Request
           ]
       }
 
-   Request body when **action** is set to **delete**
+-  Request body when **action** is set to **delete**
 
    .. code-block::
 
@@ -130,8 +134,8 @@ Request
           ]
       }
 
-Response
---------
+Example Response
+----------------
 
 None
 

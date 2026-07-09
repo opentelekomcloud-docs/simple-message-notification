@@ -10,6 +10,7 @@ APIs
 -  :ref:`Template Operations <smn_api_53000>`
 -  :ref:`Message Publishing <smn_api_54000>`
 -  :ref:`Resource Tag Operations <smn_api_56000>`
+-  :ref:`Message Filter Policies for Subscriptions <smn_api_90000>`
 -  :ref:`Version Querying <smn_api_510000>`
 
 .. toctree::
@@ -21,4 +22,5 @@ APIs
    template_operations/index
    message_publishing/index
    resource_tag_operations/index
+   message_filter_policies_for_subscriptions/index
    version_querying/index

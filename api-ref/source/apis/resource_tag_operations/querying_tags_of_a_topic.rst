@@ -5,25 +5,21 @@
 Querying Tags of a Topic
 ========================
 
-Description
------------
+Function
+--------
 
--  API name
-
-   ListResourceTags
-
--  Function
-
-   Query tags of a topic.
+Query tags of a topic.
 
 URI
 ---
 
--  URI format
+GET /v2/{project_id}/{resource_type}/{resource_id}/tags
 
-   GET /v2/{project_id}/{resource_type}/{resource_id}/tags
+For details, see :ref:`Table 1 <smn_api_56005__table29791058162012>`.
 
--  Parameter description
+.. _smn_api_56005__table29791058162012:
+
+.. table:: **Table 1** URI parameters
 
    +-----------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------+
    | Parameter       | Mandatory       | Type            | Description                                                                                            |
@@ -47,61 +43,65 @@ URI
 Request
 -------
 
--  Parameter description
-
-   None
-
--  Example request
-
-   .. code-block:: text
-
-      GET https://{SMN_Endpoint}/v2/{project_id}/{resource_type}/{resource_id}/tags
+None
 
 Response
 --------
 
--  Parameter description
+:ref:`Table 2 <smn_api_56005__table2010959142017>` describes the response parameters.
+
+.. _smn_api_56005__table2010959142017:
+
+.. table:: **Table 2** Response parameters
 
    +-----------+------------------------------+--------------------------------------------------------------------------------+
    | Parameter | Type                         | Description                                                                    |
    +===========+==============================+================================================================================+
-   | tags      | Resource_tag structure array | Tag list. For details, see :ref:`Table 1 <smn_api_56005__table1127111434346>`. |
+   | tags      | Resource_tag structure array | Tag list. For details, see :ref:`Table 3 <smn_api_56005__table1127111434346>`. |
    +-----------+------------------------------+--------------------------------------------------------------------------------+
 
-   .. _smn_api_56005__table1127111434346:
+.. _smn_api_56005__table1127111434346:
 
-   .. table:: **Table 1** Resource_tag structure
+.. table:: **Table 3** Resource_tag structure
 
-      +-----------------------+-----------------------+---------------------------------------------------------------+
-      | Parameter             | Type                  | Description                                                   |
-      +=======================+=======================+===============================================================+
-      | key                   | String                | The tag key.                                                  |
-      |                       |                       |                                                               |
-      |                       |                       | -  A tag key can contain a maximum of 127 Unicode characters. |
-      |                       |                       |                                                               |
-      |                       |                       | -  **key** cannot be left blank.                              |
-      +-----------------------+-----------------------+---------------------------------------------------------------+
-      | value                 | String                | The tag value.                                                |
-      |                       |                       |                                                               |
-      |                       |                       | -  Each value contains a maximum of 255 Unicode characters.   |
-      +-----------------------+-----------------------+---------------------------------------------------------------+
+   +-----------------------+-----------------------+---------------------------------------------------------------+
+   | Parameter             | Type                  | Description                                                   |
+   +=======================+=======================+===============================================================+
+   | key                   | String                | The tag key.                                                  |
+   |                       |                       |                                                               |
+   |                       |                       | -  A tag key can contain a maximum of 128 Unicode characters. |
+   |                       |                       |                                                               |
+   |                       |                       | -  **key** cannot be left blank.                              |
+   +-----------------------+-----------------------+---------------------------------------------------------------+
+   | value                 | String                | The tag value.                                                |
+   |                       |                       |                                                               |
+   |                       |                       | -  Each value contains a maximum of 255 Unicode characters.   |
+   +-----------------------+-----------------------+---------------------------------------------------------------+
 
--  Example response
+Example Request
+---------------
 
-   .. code-block::
+.. code-block:: text
 
-      {
-             "tags": [
-              {
-                  "key": "key1",
-                  "value": "value1"
-              },
-              {
-                  "key": "key2",
-                  "value": "value3"
-              }
-          ]
-      }
+   GET https://{SMN_Endpoint}/v2/{project_id}/{resource_type}/{resource_id}/tags
+
+Example Response
+----------------
+
+.. code-block::
+
+   {
+          "tags": [
+           {
+               "key": "key1",
+               "value": "value1"
+           },
+           {
+               "key": "key2",
+               "value": "value3"
+           }
+       ]
+   }
 
 Returned Value
 --------------

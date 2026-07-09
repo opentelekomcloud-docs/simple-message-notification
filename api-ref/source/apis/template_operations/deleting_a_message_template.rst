@@ -5,25 +5,21 @@
 Deleting a Message Template
 ===========================
 
-Description
------------
+Function
+--------
 
--  API name
-
-   DeleteMessageTemplate
-
--  Function
-
-   Delete a message template. After you delete the template, you can no longer use it to publish messages.
+Delete a message template. After you delete the template, you can no longer use it to publish messages.
 
 URI
 ---
 
--  URI format
+DELETE /v2/{project_id}/notifications/message_template/{message_template_id}
 
-   DELETE /v2/{project_id}/notifications/message_template/{message_template_id}
+For details, see :ref:`Table 1 <smn_api_53003__table28042199>`.
 
--  Parameter description
+.. _smn_api_53003__table28042199:
+
+.. table:: **Table 1** URI parameters
 
    +---------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------------+
    | Parameter           | Mandatory       | Type            | Description                                                                                                         |
@@ -38,16 +34,16 @@ URI
 Request
 -------
 
-Example request
-
-.. code-block:: text
-
-   DELETE https://{SMN_Endpoint}/v2/{project_id}/notifications/message_template/b3ffa2cdda574168826316f0628f774e
+None
 
 Response
 --------
 
--  Parameter description
+:ref:`Table 2 <smn_api_53003__table29623765>` describes the response parameters.
+
+.. _smn_api_53003__table29623765:
+
+.. table:: **Table 2** Response parameters
 
    ========== ====== ===========================
    Parameter  Type   Description
@@ -55,13 +51,21 @@ Response
    request_id String Request ID, which is unique
    ========== ====== ===========================
 
--  Example response
+Example Request
+---------------
 
-   .. code-block::
+.. code-block:: text
 
-      {
-          "request_id": "5fcba32bd2814ea39431829c22bda94b"
-      }
+   DELETE https://{SMN_Endpoint}/v2/{project_id}/notifications/message_template/b3ffa2cdda574168826316f0628f774e
+
+Example Response
+----------------
+
+.. code-block::
+
+   {
+       "request_id": "5fcba32bd2814ea39431829c22bda94b"
+   }
 
 Returned Value
 --------------

@@ -5,25 +5,21 @@
 Deleting All Topic Policies
 ===========================
 
-Description
------------
+Function
+--------
 
--  API name
-
-   DeleteTopicAttributes
-
--  Function
-
-   Delete all topic policies.
+Delete all topic policies.
 
 URI
 ---
 
--  URI format
+DELETE /v2/{project_id}/notifications/topics/{topic_urn}/attributes
 
-   DELETE /v2/{project_id}/notifications/topics/{topic_urn}/attributes
+For details, see :ref:`Table 1 <smn_api_51009__table60453091>`.
 
--  Parameter description
+.. _smn_api_51009__table60453091:
+
+.. table:: **Table 1** URI parameters
 
    +-----------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------------------+
    | Parameter       | Mandatory       | Type            | Description                                                                                                       |
@@ -38,16 +34,16 @@ URI
 Request
 -------
 
-Example request
-
-.. code-block:: text
-
-   DELETE https://{SMN_Endpoint}/v2/{project_id}/notifications/topics/{topic_urn}/attributes
+None
 
 Response
 --------
 
--  Parameter description
+:ref:`Table 2 <smn_api_51009__table38552084>` describes the response parameters.
+
+.. _smn_api_51009__table38552084:
+
+.. table:: **Table 2** Response parameters
 
    ========== ====== ===========================
    Parameter  Type   Description
@@ -55,13 +51,21 @@ Response
    request_id String Request ID, which is unique
    ========== ====== ===========================
 
--  Example response
+Example Request
+---------------
 
-   .. code-block::
+.. code-block:: text
 
-      {
-          "request_id": "6837531fd3f54550927b930180a706bf"
-      }
+   DELETE https://{SMN_Endpoint}/v2/{project_id}/notifications/topics/{topic_urn}/attributes
+
+Example Response
+----------------
+
+.. code-block::
+
+   {
+       "request_id": "6837531fd3f54550927b930180a706bf"
+   }
 
 Returned Value
 --------------

@@ -5,25 +5,21 @@
 Modifying a Message Template
 ============================
 
-Description
------------
+Function
+--------
 
--  API name
-
-   UpdateMessageTemplate
-
--  Function
-
-   Modify the message template content.
+Modify the message template content.
 
 URI
 ---
 
--  URI format
+PUT /v2/{project_id}/notifications/message_template/{message_template_id}
 
-   PUT /v2/{project_id}/notifications/message_template/{message_template_id}
+For details, see :ref:`Table 1 <smn_api_53002__table54302323>`.
 
--  Parameter description
+.. _smn_api_53002__table54302323:
+
+.. table:: **Table 1** URI parameters
 
    +---------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------------+
    | Parameter           | Mandatory       | Type            | Description                                                                                                         |
@@ -38,7 +34,11 @@ URI
 Request
 -------
 
--  Parameter description
+:ref:`Table 2 <smn_api_53002__table30791836>` describes the request parameters.
+
+.. _smn_api_53002__table30791836:
+
+.. table:: **Table 2** Request parameters
 
    +-----------------+-----------------+-----------------+------------------------------------------------------------------+
    | Parameter       | Mandatory       | Type            | Description                                                      |
@@ -48,22 +48,14 @@ Request
    |                 |                 |                 | The template content cannot be left blank or larger than 256 KB. |
    +-----------------+-----------------+-----------------+------------------------------------------------------------------+
 
--  Example request
-
-   .. code-block:: text
-
-      PUT https://{SMN_Endpoint}/v2/{project_id}/notifications/message_template/b3ffa2cdda574168826316f0628f774f
-
-   .. code-block::
-
-      {
-          "content": "(1/22)You are invited to subscribe to topic({topic_id_id1}). Click the following URL to confirm subscription:(If you do not want to subscribe to this topic, ignore this message.)"
-      }
-
 Response
 --------
 
--  Parameter description
+:ref:`Table 3 <smn_api_53002__table19559856>` describes the response parameters.
+
+.. _smn_api_53002__table19559856:
+
+.. table:: **Table 3** Response parameters
 
    ========== ====== ===========================
    Parameter  Type   Description
@@ -71,13 +63,27 @@ Response
    request_id String Request ID, which is unique
    ========== ====== ===========================
 
--  Example response
+Example Request
+---------------
 
-   .. code-block::
+.. code-block:: text
 
-      {
-          "request_id": "5fcba32bd2814ea39431829c22bda94b"
-      }
+   PUT https://{SMN_Endpoint}/v2/{project_id}/notifications/message_template/b3ffa2cdda574168826316f0628f774f
+
+.. code-block::
+
+   {
+       "content": "(1/22)You are invited to subscribe to topic({topic_id_id1}). Click the following URL to confirm subscription:(If you do not want to subscribe to this topic, ignore this message.)"
+   }
+
+Example Response
+----------------
+
+.. code-block::
+
+   {
+       "request_id": "5fcba32bd2814ea39431829c22bda94b"
+   }
 
 Returned Value
 --------------
