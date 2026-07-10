@@ -21,7 +21,7 @@ The JSON format allows you to specify different message content for different su
      "functionstage": "Dear Sir or Madam, this is a functiongraph(function) message."
        }
 
-It is recommended that you specify general message content for all subscription types in the **Default** protocol and enter customized content for specific protocols.
+It is recommended that you specify general message content for all subscription types in the **Default** protocol and enter custom content for specific protocols.
 
 In the following example, you enter a shorter message for the SMS protocol because of the length limit on SMS messages. SMS subscribers in the topic receive the message "This is an SMS message.", while other types of subscribers (email, FunctionGraph (function), HTTP, and HTTPS) receive the one "Dear Sir or Madam, this is a default message."
 

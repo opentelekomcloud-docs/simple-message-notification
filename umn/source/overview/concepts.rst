@@ -8,7 +8,7 @@ Concepts
 Project
 -------
 
-Projects are used to group and isolate OpenStack resources, including compute, storage, and network resources. A project can be either a department or a project team. Multiple projects can be created in one account.
+Projects are used to group and isolate OpenStack resources, including compute, storage, and networking resources. A project can be either a department or a project team. Multiple projects can be created in one account.
 
 Protocol
 --------

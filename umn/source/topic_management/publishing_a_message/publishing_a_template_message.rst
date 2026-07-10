@@ -10,11 +10,11 @@ Scenarios
 
 Message templates contain fixed message content. If you need to send the same or similar messages multiple times, you can create a message template for quick message sending.
 
-You can create different templates for different protocols using the same template name so that each type of subscribers can receive customized messages. Templates contain variables as the placeholders to represent changeable content that you can replace with your own message content. Note that you must create a template whose **Protocol** is **Default**, or the system will prevent you from publishing messages using this template name.
+You can create different templates for different protocols using the same template name so that each type of subscribers can receive custom messages. Templates contain variables as the placeholders to represent changeable content that you can replace with your own message content. Note that you must create a template whose **Protocol** is **Default**, or the system will prevent you from publishing messages using this template name.
 
-When you are creating messages using a template, select a template name. The system will list all variables in the following protocol sequence: **Default**, **SMS**, , **Email**, **FunctionGraph (function)**, **HTTP**, **HTTPS**. The same variables are listed only once even if they are used in multiple protocols, and the protocols they support are listed after each variable. Specify content for each variable in the message template, and SMN replaces them with the content you entered. If you do not enter any content for a variable, the system will treat it as empty when sending messages. SMN tries to match different types of subscribers to the template protocols. If there is no template for a specified protocol, SMN will use the default template to send messages to subscribers of that protocol.
+When you are creating messages using a template, select a template name. The system will list all variables in the following protocol sequence: **Default**, **SMS**, **Email**, **FunctionGraph (function)**, **HTTP**, and **HTTPS**. The same variables are listed only once even if they are used in multiple protocols, and the protocols they support are listed after each variable. Specify content for each variable in the message template, and SMN replaces them with the content you entered. If you do not enter any content for a variable, the system will treat it as empty when sending messages. SMN tries to match different types of subscribers to the template protocols. If there is no template for a specified protocol, SMN will use the default template to send messages to subscribers of that protocol.
 
-This section describes how to publish messages using a template. For more details about message templates, see :ref:`Message Template Management <en-us_topic_0043394889>`.
+This section describes how to publish messages using a template. Before sending a template message, you need to create a message template. For details about message templates, see :ref:`Message Template Management <en-us_topic_0043394889>`.
 
 Prerequisites
 -------------
@@ -26,17 +26,17 @@ Creating a Message Template
 
 #. Log in to the management console.
 
-#. Click |image1| on the upper left to select the desired region and project.
+#. In the upper left corner of the page, click |image1| and select the desired region and project.
 
 #. Select **Application** > **Simple Message Notification**.
 
-   The SMN console is displayed.
+   The SMN console appears.
 
 #. In the navigation pane on the left, choose **Message Templates**.
 
-   The **Message Templates** tab page is displayed.
+   The **Message Templates** tab page appears.
 
-#. In the upper right corner, click **Create Message Template**. For details, see :ref:`Creating a Message Template <en-us_topic_0043394889__section66624127194914>` in :ref:`Message Template Management <en-us_topic_0043394889>`.
+#. Create a message template. For details, see :ref:`Creating a Message Template <smn_ug_0086>`.
 
    For example, the template information is as follows:
 
@@ -47,7 +47,7 @@ Creating a Message Template
 #. Click **OK**.
 
 
-   .. figure:: /_static/images/en-us_image_0095665587.png
+   .. figure:: /_static/images/en-us_image_0000002624798318.png
       :alt: **Figure 1** Create Message Template
 
       **Figure 1** Create Message Template
@@ -58,15 +58,15 @@ Publishing a Template Message
 
 #. Log in to the management console.
 
-#. Click |image2| on the upper left to select the desired region and project.
+#. In the upper left corner of the page, click |image2| and select the desired region and project.
 
-#. Under **Application**, select **Simple Message Notification**.
+#. Select **Application** > **Simple Message Notification**.
 
-   The SMN console is displayed.
+   The SMN console appears.
 
 #. In the navigation pane, choose **Topics**.
 
-   The **Topics** page is displayed.
+   The **Topics** page appears.
 
 #. In the topic list, locate the topic that you need to publish a message to and click **Publish Message** in the **Operation** column.
 
@@ -89,17 +89,17 @@ Publishing a Template Message
 
    .. _en-us_topic_0044170770__fig365979611560:
 
-   .. figure:: /_static/images/en-us_image_0095665660.png
+   .. figure:: /_static/images/en-us_image_0000002624799164.png
       :alt: **Figure 2** Generate Template Message
 
       **Figure 2** Generate Template Message
 
 #. Click the **Preview** tab and click **Message Preview** to preview the message.
 
-   In this example, the message generated is **The Arts and Crafts Exposition will be held from February 10 through February 21. We sincerely invite you to join us.**.
+   In this example, the message generated is **The Arts and Crafts Exposition will be held from February 10 through February 21. We sincerely invite you to join us.**
 
 
-   .. figure:: /_static/images/en-us_image_0095665678.png
+   .. figure:: /_static/images/en-us_image_0000002624799530.png
       :alt: **Figure 3** Previewing the template message
 
       **Figure 3** Previewing the template message
@@ -108,17 +108,45 @@ Publishing a Template Message
 
    Click **OK**.
 
-   The message that is generated contains the template name and variables.
+   The generated message contains the template name and all attached tags.
 
 
-   .. figure:: /_static/images/en-us_image_0095665722.png
+   .. figure:: /_static/images/en-us_image_0000002655079145.png
       :alt: **Figure 4** Template message example
 
       **Figure 4** Template message example
+
+#. (Optional) Configure message attribute parameters. Message attributes specify the scope of message publishing.
+
+   .. table:: **Table 1** Message attribute parameters
+
+      +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      | Parameter                         | Description                                                                                                                                                                                                |
+      +===================================+============================================================================================================================================================================================================+
+      | Type                              | Select the type of the message to be published.                                                                                                                                                            |
+      |                                   |                                                                                                                                                                                                            |
+      |                                   | -  Protocol                                                                                                                                                                                                |
+      |                                   | -  string.array                                                                                                                                                                                            |
+      |                                   | -  String                                                                                                                                                                                                  |
+      +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      | Name                              | Enter up to 32 characters, including only digits, lowercase letters, and underscores (_). Start with a number or lowercase letter. Do not end with an underscore (_) or enter consecutive underscores (_). |
+      |                                   |                                                                                                                                                                                                            |
+      |                                   | -  When you set **Type** to **Protocol**, **Name** will be **smn_protocol** by default.                                                                                                                    |
+      |                                   | -  When you set **Type** to **string.array**, enter the name of the array that restricts the message to be published.                                                                                      |
+      |                                   | -  When you set **Type** to **String**, enter the name of the character string that restricts the message to be published.                                                                                 |
+      +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      | Value                             | -  When you set **Type** to **Protocol**, select a protocol from the drop-down list. The available options are **SMS**, **Email**, **HTTP**, **HTTPS**, and **FunctionGraph (function)**.                  |
+      |                                   |                                                                                                                                                                                                            |
+      |                                   | -  When you set **Type** to **string.array**, the value must be a string array with a length of 1 to 10 elements.                                                                                          |
+      |                                   |                                                                                                                                                                                                            |
+      |                                   |    For example: [ "email", "sms" ]                                                                                                                                                                         |
+      |                                   |                                                                                                                                                                                                            |
+      |                                   | -  When you set **Type** to **String**, you cannot leave **Value** blank. Enter up to 32 characters, including only digits, letters, and underscores (_).                                                  |
+      +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 #. Click **OK**.
 
    SMN delivers your message to all subscription endpoints. For details about messages for different protocols, see :ref:`Messages Using Different Protocols <smn_ug_a3000>`.
 
-.. |image1| image:: /_static/images/en-us_image_0259222479.png
-.. |image2| image:: /_static/images/en-us_image_0259222478.png
+.. |image1| image:: /_static/images/en-us_image_0151546390.png
+.. |image2| image:: /_static/images/en-us_image_0151546390.png

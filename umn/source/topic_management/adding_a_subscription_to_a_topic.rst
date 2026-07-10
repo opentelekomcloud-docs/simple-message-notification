@@ -10,8 +10,8 @@ Scenarios
 
 To deliver messages published to a topic to endpoints, you must add the subscription endpoints to the topic.
 
-Adding a Subscription
----------------------
+Procedure
+---------
 
 #. Log in to the management console.
 
@@ -19,20 +19,20 @@ Adding a Subscription
 
 #. Select **Application** > **Simple Message Notification**.
 
-   The SMN console is displayed.
+   The SMN console appears.
 
 #. In the navigation pane, choose **Topics**.
 
-   The **Topics** page is displayed.
+   The **Topics** page appears.
 
 #. Locate the topic that you want to add a subscription to. In the **Operation** column, click **Add Subscription**.
 
    Alternatively, click a topic name. In the upper right corner of the displayed page, click **Add Subscription**.
 
-   The **Add Subscription** dialog box is displayed.
+   The **Add Subscription** dialog box appears.
 
 
-   .. figure:: /_static/images/en-us_image_0000002195142398.png
+   .. figure:: /_static/images/en-us_image_0000002624956146.png
       :alt: **Figure 1** Add Subscription
 
       **Figure 1** Add Subscription
@@ -52,7 +52,7 @@ Adding a Subscription
       |                                   |                                                                                                                                                                                                                                                         |
       |                                   | -  **SMS**: Enter one or more valid phone numbers.                                                                                                                                                                                                      |
       |                                   |                                                                                                                                                                                                                                                         |
-      |                                   |    A phone number must be preceded by a plus sign (+) and a country code.                                                                                                                                                                               |
+      |                                   |    The phone number must be in the following format: [+][*Country code*][*Mobile number*]                                                                                                                                                               |
       |                                   |                                                                                                                                                                                                                                                         |
       |                                   |    Examples:                                                                                                                                                                                                                                            |
       |                                   |                                                                                                                                                                                                                                                         |
@@ -84,7 +84,7 @@ Adding a Subscription
       |                                   |                                                                                                                                                                                                                                                         |
       |                                   |    **https://example.com/notification/action**                                                                                                                                                                                                          |
       |                                   |                                                                                                                                                                                                                                                         |
-      |                                   | -  **FunctionGraph (function)**: Click |image2| to select a function and specify its version.                                                                                                                                                           |
+      |                                   | -  **FunctionGraph (function)**: Click **Add Endpoint** to select a function and specify its version.                                                                                                                                                   |
       +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
       | Request Header                    | This parameter is only available if **HTTP** or **HTTPS** is selected for **Protocol**. It indicates whether to configure the request header now. If you select **Configure now**, specify **Key** and **Value**. You can add up to 10 request headers. |
       |                                   |                                                                                                                                                                                                                                                         |
@@ -99,6 +99,29 @@ Adding a Subscription
       | Description                       | Enter the remarks for the subscription. The remarks can contain a maximum of 128 characters.                                                                                                                                                            |
       +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+#. (Optional) Configure a subscription filter policy to specify the scope of message publishing.
+
+   A subscription filter policy applies to message attributes. If you have set a filter policy and message attributes when publishing a message, the system determines whether to push the message to subscribers based on the filter policy you set. For details about the configuration example, see :ref:`Using a Subscription Filter Policy <smn_ug_a9005>`.
+
+   Subscription filter policies are configured in JSON. The following is an example.
+
+   .. code-block::
+
+      {
+          "filter_polices": [
+              {
+                  "name": "policy_name",
+                  "string_equals": [
+                      "policy_value"
+                  ]
+              }
+          ]
+      }
+
+   For details about how to configure subscription filter policies, see `Creating Message Filter Policies for a Subscriber <https://docs.otc.t-systems.com/en-us/api/smn/smn_api_91000.html>`__ in the *Simple Message Notification API Reference*.
+
+   For details about how to configure message attributes, see :ref:`Table 2 <en-us_topic_0043961403__table17341132634914>`.
+
 #. Click **OK**.
 
    The subscription you added is displayed in the subscription list.
@@ -110,5 +133,9 @@ Adding a Subscription
       -  After you add a subscription or request subscription confirmation, SMN will send a confirmation message to the endpoints, and the link in the confirmation message will be valid for 48 hours.
       -  Subscription confirmation messages will be counted as messages sent and will be billed.
 
+Follow-Up Operations
+--------------------
+
+After a subscription is added, you can edit its remarks and subscription filter policies as required. For details, see :ref:`Editing a Subscription <smn_ug_0810>`.
+
 .. |image1| image:: /_static/images/en-us_image_0151546390.png
-.. |image2| image:: /_static/images/en-us_image_0000001495292001.png

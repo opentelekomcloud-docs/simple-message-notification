@@ -17,7 +17,7 @@ The following are examples of some services using SMN.
 
    Anti-DDoS uses SMN to notify users by email or SMS message once a DDoS attack occurs.
 
--  `Cloud Trace Service (CTS) <https://docs.otc.t-systems.com/en-us/usermanual/cts/en-us_topic_0030579718.html>`__
+-  `Cloud Trace Service (CTS) <https://docs.otc.t-systems.com/en-us/usermanual/cts/en-us_topic_0071185699.html>`__
 
    CTS can be integrated with SMN to notify users of key events. SMN also uses CTS to record service resource operations.
 

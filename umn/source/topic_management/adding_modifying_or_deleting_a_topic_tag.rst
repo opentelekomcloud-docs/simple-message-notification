@@ -13,8 +13,8 @@ Tags consist of keys and values. They identify cloud resources so that you can e
 -  A tag key can have multiple values.
 -  Tag keys for the same resource must be unique.
 
-Adding Tags to a Topic
-----------------------
+Procedure
+---------
 
 #. Log in to the management console.
 
@@ -22,22 +22,22 @@ Adding Tags to a Topic
 
 #. Select **Application** > **Simple Message Notification**.
 
-   The SMN console is displayed.
+   The SMN console appears.
 
 #. In the navigation pane, choose **Topics**.
 
-   The **Topics** page is displayed.
+   The **Topics** page appears.
 
 #. Click the topic name.
 
-   The **Topic Details** page is displayed.
+   The **Topic Details** page appears.
 
 #. Click the **Tags** tab.
 
 #. Click **Add Tag** and specify tag keys and values.
 
 
-   .. figure:: /_static/images/en-us_image_0152909841.png
+   .. figure:: /_static/images/en-us_image_0000002655153713.png
       :alt: **Figure 1** Add Tag
 
       **Figure 1** Add Tag
@@ -60,22 +60,22 @@ Modifying a Topic Tag
 
 #. Select **Application** > **Simple Message Notification**.
 
-   The SMN console is displayed.
+   The SMN console appears.
 
 #. In the navigation pane, choose **Topics**.
 
-   The **Topics** page is displayed.
+   The **Topics** page appears.
 
 #. Click the topic name.
 
-   The **Topic Details** page is displayed.
+   The **Topic Details** page appears.
 
 #. Click the **Tags** tab.
 
 #. Click **Edit** under **Operation** to modify the tag value.
 
 
-   .. figure:: /_static/images/en-us_image_0000001233034749.png
+   .. figure:: /_static/images/en-us_image_0000002655153933.png
       :alt: **Figure 2** Edit Tag
 
       **Figure 2** Edit Tag
@@ -91,22 +91,22 @@ Deleting a Topic Tag
 
 #. Select **Application** > **Simple Message Notification**.
 
-   The SMN console is displayed.
+   The SMN console appears.
 
 #. In the navigation pane, choose **Topics**.
 
-   The **Topics** page is displayed.
+   The **Topics** page appears.
 
 #. Click the topic name.
 
-   The **Topic Details** page is displayed.
+   The **Topic Details** page appears.
 
 #. Click the **Tags** tab.
 
 #. Click **Delete** in the **Operation** column and click **OK** in the confirmation dialog box.
 
 
-   .. figure:: /_static/images/en-us_image_0000001187715160.png
+   .. figure:: /_static/images/en-us_image_0000002655154231.png
       :alt: **Figure 3** Delete Tag
 
       **Figure 3** Delete Tag
