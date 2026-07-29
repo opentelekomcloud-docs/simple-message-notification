@@ -18,7 +18,7 @@ This section describes the procedure for granting permissions (see :ref:`Figure 
 Prerequisites
 -------------
 
-Learn about the system permissions (see :ref:`Permissions <smn_ug_0034_1>`) supported by SMN and choose policies or roles according to your requirements. To grant permissions for other services, learn about all `permissions <https://docs.otc.t-systems.com/identity-access-management/permissions/permissions.html>`__.
+Learn about the system permissions (see :ref:`Permissions <en-us_topic_0173558566>`) supported by SMN and choose policies or roles according to your requirements. To grant permissions for other services, learn about all `permissions <https://docs.otc.t-systems.com/identity-access-management/permissions/permissions.html>`__.
 
 Process Flow
 ------------

@@ -10,17 +10,16 @@ Scenarios
 
 If a subscriber does not receive the confirmation message, request confirmation again. You can send a subscription confirmation message to one or more subscription endpoints at a time. For details, see :ref:`Traffic Control over Subscription Confirmation <smn_ug_a4000>`.
 
-
-Requesting Subscription Confirmation
-------------------------------------
+Procedure
+---------
 
 #. Log in to the management console.
 
-#. Click |image1| on the upper left to select the desired region and project.
+#. In the upper left corner of the page, click |image1| and select the desired region and project.
 
 #. Select **Application** > **Simple Message Notification**.
 
-   The SMN console is displayed.
+   The SMN console appears.
 
 #. In the navigation pane on the left, choose **Subscriptions**.
 
@@ -39,4 +38,4 @@ Requesting Subscription Confirmation
       -  After you add a subscription and request subscription confirmation, SMN sends a message that contains a link for confirming the subscription to the subscription endpoint. The subscription confirmation link is valid within 48 hours. Confirm the subscription on your mobile phone, mailbox, or other endpoints in time.
       -  Subscription confirmation messages will be counted as messages sent and will be billed.
 
-.. |image1| image:: /_static/images/en-us_image_0259222476.png
+.. |image1| image:: /_static/images/en-us_image_0151546390.png

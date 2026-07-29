@@ -30,16 +30,16 @@ Step 1. Create a Topic
 
 #. Select **Application** > **Simple Message Notification**.
 
-   The SMN console is displayed.
+   The SMN console appears.
 
 #. In the navigation pane, choose **Topics**.
 
-   The **Topics** page is displayed.
+   The **Topics** page appears.
 
 #. In the upper right corner, click **Create Topic**.
 
 
-   .. figure:: /_static/images/en-us_image_0152909747.png
+   .. figure:: /_static/images/en-us_image_0000002624942854.png
       :alt: **Figure 2** Create Topic
 
       **Figure 2** Create Topic
@@ -56,12 +56,19 @@ Step 1. Create a Topic
       |                                   | -  Contains only letters, digits, hyphens (-), and underscores (_) and must start with a letter or digit.                                                                                            |
       |                                   | -  Contains 1 to 255 characters.                                                                                                                                                                     |
       |                                   | -  Must be unique and cannot be modified once the topic is created.                                                                                                                                  |
+      |                                   | -  Must be specified.                                                                                                                                                                                |
       +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-      | Display Name                      | Message sender name, which can contain up to 192 characters                                                                                                                                          |
+      | Display Name                      | Message sender name, which can contain a maximum of 192 characters                                                                                                                                   |
+      |                                   |                                                                                                                                                                                                      |
+      |                                   | This parameter is optional.                                                                                                                                                                          |
       |                                   |                                                                                                                                                                                                      |
       |                                   | .. note::                                                                                                                                                                                            |
       |                                   |                                                                                                                                                                                                      |
       |                                   |    After you specify a display name, the sender in email messages will be presented as *Display name*\ **<noreply@otc.t-systems.com>**. Otherwise, the sender will be **noreply@otc.t-systems.com**. |
+      +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      | Enterprise Project                | Name of an enterprise project. An enterprise project facilitates project-level management and grouping of cloud resources and users.                                                                 |
+      |                                   |                                                                                                                                                                                                      |
+      |                                   | This parameter is mandatory for enterprise users.                                                                                                                                                    |
       +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
       | Tag                               | A tag is a key-value pair. Tags identify cloud resources so that you can easily categorize and search for your resources.                                                                            |
       |                                   |                                                                                                                                                                                                      |
@@ -73,7 +80,9 @@ Step 1. Create a Topic
 
    The topic you created is displayed in the topic list. The system generates a topic URN, which is the unique resource identifier of the topic and cannot be changed.
 
-   To search for a topic, filter topics by project or enter the topic name in the upper right corner of the topic list. Then click |image2| or press **Enter**. Alternatively, click **Search by Tag** above the upper right corner of the topic list and search for a topic by tag key and value.
+   To search for a topic, set the filter criteria in the search box above the topic list. You can search for topics by topic name, ID, URN, creation time, and display name.
+
+   After the search is complete, click |image2| in the search box. The **Save as Quick Filter Set** dialog box is displayed. Enter a filter set name and click **OK** to save the current filter criteria as a quick filter set.
 
 #. Click the name of the topic to view its details, including the topic URN, display name, tags, and subscriptions.
 
@@ -86,23 +95,24 @@ Step 2. Add a Subscription
 
 #. Select **Application** > **Simple Message Notification**.
 
-   The SMN console is displayed.
+   The SMN console appears.
 
 #. In the navigation pane on the left, choose **Subscriptions**.
 
 #. In the upper right corner, click **Add Subscription**.
 
-   The **Add Subscription** dialog box is displayed.
+   The **Add Subscription** dialog box appears.
 
 
-   .. figure:: /_static/images/en-us_image_0000002194988730.png
+   .. figure:: /_static/images/en-us_image_0000002655065061.png
       :alt: **Figure 3** Add Subscription
 
       **Figure 3** Add Subscription
 
 #. Specify the required subscription information.
 
-   a. Beside **Topic Name**, click **Select Topic**.
+   a. On the right of **Topic Name**, click **Select Topic**.
+
    b. Specify the subscription protocol and endpoints.
 
       .. table:: **Table 2** Parameters for adding a subscription
@@ -118,7 +128,7 @@ Step 2. Add a Subscription
          |                                   |                                                                                                                                                                                                                                                         |
          |                                   | -  **SMS**: Enter one or more valid phone numbers.                                                                                                                                                                                                      |
          |                                   |                                                                                                                                                                                                                                                         |
-         |                                   |    A phone number must be preceded by a plus sign (+) and a country code.                                                                                                                                                                               |
+         |                                   |    The phone number must be in the following format: [+][*Country code*][*Mobile number*]                                                                                                                                                               |
          |                                   |                                                                                                                                                                                                                                                         |
          |                                   |    Examples:                                                                                                                                                                                                                                            |
          |                                   |                                                                                                                                                                                                                                                         |
@@ -150,7 +160,7 @@ Step 2. Add a Subscription
          |                                   |                                                                                                                                                                                                                                                         |
          |                                   |    **https://example.com/notification/action**                                                                                                                                                                                                          |
          |                                   |                                                                                                                                                                                                                                                         |
-         |                                   | -  **FunctionGraph (function)**: Click |image4| to select a function and specify its version.                                                                                                                                                           |
+         |                                   | -  **FunctionGraph (function)**: Click **Add Endpoint** to select a function and specify its version.                                                                                                                                                   |
          +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
          | Request Header                    | This parameter is only available if **HTTP** or **HTTPS** is selected for **Protocol**. It indicates whether to configure the request header now. If you select **Configure now**, specify **Key** and **Value**. You can add up to 10 request headers. |
          |                                   |                                                                                                                                                                                                                                                         |
@@ -165,11 +175,36 @@ Step 2. Add a Subscription
          | Description                       | Enter the remarks for the subscription. The remarks can contain a maximum of 128 characters.                                                                                                                                                            |
          +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+   c. (Optional) Configure a subscription filter policy to specify the scope of message publishing.
+
+      A subscription filter policy applies to message attributes. If you have set a filter policy and message attributes when publishing a message, the system determines whether to push the message to subscribers based on the filter policy you set. For details about the configuration example, see :ref:`Using a Subscription Filter Policy <smn_ug_a9005>`.
+
+      Subscription filter policies are configured in JSON. The following is an example.
+
+      .. code-block::
+
+         {
+             "filter_polices": [
+                 {
+                     "name": "policy_name",
+                     "string_equals": [
+                         "policy_value"
+                     ]
+                 }
+             ]
+         }
+
+      For details about how to configure subscription filter policies, see `Creating Message Filter Policies for a Subscriber <https://docs.otc.t-systems.com/en-us/api/smn/smn_api_91000.html>`__ in the *Simple Message Notification API Reference*.
+
+      For details about how to configure message attributes, see :ref:`Table 2 <en-us_topic_0043961403__table17341132634914>`.
+
 #. Click **OK**.
 
    The subscription you added is displayed in the subscription list.
 
-   To search for a subscription, you can filter subscriptions by protocol or subscription status in the upper right corner of the subscription list. You can also enter a subscription endpoint and click |image5| or press **Enter**.
+   To search for a subscription, set the filter criteria in the search box above the subscription list. You can search for subscriptions by protocol, endpoint, status, and description.
+
+   After the search is complete, click |image4| in the search box. The **Save as Quick Filter Set** dialog box is displayed. Enter a filter set name and click **OK** to save the current filter criteria as a quick filter set.
 
    .. note::
 
@@ -183,55 +218,58 @@ Step 3. Create a Message Template
 
 #. Log in to the management console.
 
-#. Click |image6| on the upper left to select the desired region and project.
+#. In the upper left corner of the page, click |image5| and select the desired region and project.
 
 #. Select **Application** > **Simple Message Notification**.
 
-   The SMN console is displayed.
+   The SMN console appears.
 
 #. In the navigation pane on the left, choose **Message Templates**.
 
-#. In the upper right corner, click **Create Message Template**.
+#. On the **Message Templates** page, click **Create Message Template**.
 
-   The **Create Message Template** dialog box is displayed.
+   The **Create Message Template** dialog box appears.
 
 
-   .. figure:: /_static/images/en-us_image_0095667221.png
-      :alt: **Figure 4** Create Message Template
+   .. figure:: /_static/images/en-us_image_0000002624784058.png
+      :alt: **Figure 4** Creating a message template
 
-      **Figure 4** Create Message Template
+      **Figure 4** Creating a message template
 
 #. Specify the template name, protocol, and content.
 
    .. table:: **Table 3** Parameters required for creating a message template
 
-      +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-      | Parameter                         | Description                                                                                                                                                                                                                                                                                             |
-      +===================================+=========================================================================================================================================================================================================================================================================================================+
-      | Template Name                     | Template name, which:                                                                                                                                                                                                                                                                                   |
-      |                                   |                                                                                                                                                                                                                                                                                                         |
-      |                                   | -  Contains only letters, digits, hyphens (-), and underscores (_) and must start with a letter or digit.                                                                                                                                                                                               |
-      |                                   | -  Can contain 1 to 64 characters.                                                                                                                                                                                                                                                                      |
-      |                                   | -  Cannot be modified once the template is created.                                                                                                                                                                                                                                                     |
-      +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-      | Protocol                          | Endpoint protocol of the template, which cannot be changed once the template is created                                                                                                                                                                                                                 |
-      |                                   |                                                                                                                                                                                                                                                                                                         |
-      |                                   | The protocol can be **Default**, **SMS**, **HTTP**, **HTTPS**, **Email**, or **FunctionGraph (function)**.                                                                                                                                                                                              |
-      |                                   |                                                                                                                                                                                                                                                                                                         |
-      |                                   | If you do not specify a protocol, **Default** is used.                                                                                                                                                                                                                                                  |
-      +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-      | Content                           | Template content                                                                                                                                                                                                                                                                                        |
-      |                                   |                                                                                                                                                                                                                                                                                                         |
-      |                                   | Use *{xxx}* as the placeholder to create a template. When you use this template to publish messages, replace *{xxx}* with specific content. *xxx* must start with a letter or digit and can contain up to 21 characters, including only letters, digits, hyphens (-), periods (.), and underscores (_). |
-      |                                   |                                                                                                                                                                                                                                                                                                         |
-      |                                   | The message template must meet the following requirements:                                                                                                                                                                                                                                              |
-      |                                   |                                                                                                                                                                                                                                                                                                         |
-      |                                   | -  The template supports plain text only.                                                                                                                                                                                                                                                               |
-      |                                   | -  The template content cannot be left blank and its size cannot exceed 256 KB.                                                                                                                                                                                                                         |
-      |                                   |                                                                                                                                                                                                                                                                                                         |
-      |                                   | -  The template can contain up to 256 variables in total, but that includes redundant variables. For unique variables, there can be no more than 90.                                                                                                                                                    |
-      |                                   | -  When you publish messages using a template, the message content you specify for each variable cannot exceed 1 KB.                                                                                                                                                                                    |
-      +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      | Parameter                         | Description                                                                                                                                                                                                                                                                                           |
+      +===================================+=======================================================================================================================================================================================================================================================================================================+
+      | Template Name                     | Template name, which:                                                                                                                                                                                                                                                                                 |
+      |                                   |                                                                                                                                                                                                                                                                                                       |
+      |                                   | -  Contains only letters, digits, hyphens (-), and underscores (_) and must start with a letter or digit.                                                                                                                                                                                             |
+      |                                   | -  Can contain 1 to 64 characters.                                                                                                                                                                                                                                                                    |
+      |                                   | -  Cannot be modified once it is created.                                                                                                                                                                                                                                                             |
+      +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      | Protocol                          | Endpoint protocol. It cannot be changed once the template is created.                                                                                                                                                                                                                                 |
+      |                                   |                                                                                                                                                                                                                                                                                                       |
+      |                                   | The protocol can be **Default**, **SMS**, **HTTP**, **HTTPS**, **Email**, or **FunctionGraph (function)**.                                                                                                                                                                                            |
+      |                                   |                                                                                                                                                                                                                                                                                                       |
+      |                                   | The default protocol is **Default**. You can select other protocols for the same template as needed.                                                                                                                                                                                                  |
+      |                                   |                                                                                                                                                                                                                                                                                                       |
+      |                                   | Each template must include the Default protocol.                                                                                                                                                                                                                                                      |
+      +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      | Content                           | Template content.                                                                                                                                                                                                                                                                                     |
+      |                                   |                                                                                                                                                                                                                                                                                                       |
+      |                                   | Use *{xxx}* as the placeholder to create a template. When you use this template to publish messages, replace {xxx} with specific content. *xxx* must start with a letter or digit and can contain up to 21 characters, including only letters, digits, hyphens (-), periods (.), and underscores (_). |
+      |                                   |                                                                                                                                                                                                                                                                                                       |
+      |                                   | The template content must meet the following requirements:                                                                                                                                                                                                                                            |
+      |                                   |                                                                                                                                                                                                                                                                                                       |
+      |                                   | -  The template content supports plain text only.                                                                                                                                                                                                                                                     |
+      |                                   | -  The template content cannot be empty.                                                                                                                                                                                                                                                              |
+      |                                   | -  The size of the template content cannot exceed 256 KB.                                                                                                                                                                                                                                             |
+      |                                   |                                                                                                                                                                                                                                                                                                       |
+      |                                   | -  The template can contain up to 256 variables in total, but that includes redundant variables. For unique variables, there can be no more than 90.                                                                                                                                                  |
+      |                                   | -  When you publish messages using a template, the value you specify for each variable cannot exceed 1 KB.                                                                                                                                                                                            |
+      +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
    For example, the template information is as follows:
 
@@ -243,22 +281,24 @@ Step 3. Create a Message Template
 
    The template you created is displayed in the template list.
 
-   To search for a template, enter the template name in the upper right corner of the message template list and click |image7| or press **Enter**.
+   To search for a template, set the filter criteria in the search box. You can search for templates by template name, ID, protocol, and last modification time.
+
+   After the search is complete, click |image6| in the search box. The **Save as Quick Filter Set** dialog box is displayed. Enter a filter set name and click **OK** to save the current filter criteria as a quick filter set.
 
 Step 4. Publish a Template Message
 ----------------------------------
 
 #. Log in to the management console.
 
-#. Click |image8| on the upper left to select the desired region and project.
+#. In the upper left corner of the page, click |image7| and select the desired region and project.
 
-#. Under **Application**, select **Simple Message Notification**.
+#. Select **Application** > **Simple Message Notification**.
 
-   The SMN console is displayed.
+   The SMN console appears.
 
 #. In the navigation pane, choose **Topics**.
 
-   The **Topics** page is displayed.
+   The **Topics** page appears.
 
 #. In the topic list, locate the topic that you need to publish a message to and click **Publish Message** in the **Operation** column.
 
@@ -281,17 +321,17 @@ Step 4. Publish a Template Message
 
    .. _smn_qs_30010__en-us_topic_0111470019_en-us_topic_0044170770_fig365979611560:
 
-   .. figure:: /_static/images/en-us_image_0095665660.png
+   .. figure:: /_static/images/en-us_image_0000002624799164.png
       :alt: **Figure 5** Generate Template Message
 
       **Figure 5** Generate Template Message
 
 #. Click the **Preview** tab and click **Message Preview** to preview the message.
 
-   In this example, the message generated is **The Arts and Crafts Exposition will be held from February 10 through February 21. We sincerely invite you to join us.**.
+   In this example, the message generated is **The Arts and Crafts Exposition will be held from February 10 through February 21. We sincerely invite you to join us.**
 
 
-   .. figure:: /_static/images/en-us_image_0095665678.png
+   .. figure:: /_static/images/en-us_image_0000002624799530.png
       :alt: **Figure 6** Previewing the template message
 
       **Figure 6** Previewing the template message
@@ -300,13 +340,41 @@ Step 4. Publish a Template Message
 
    Click **OK**.
 
-   The message that is generated contains the template name and variables.
+   The generated message contains the template name and all attached tags.
 
 
-   .. figure:: /_static/images/en-us_image_0095665722.png
+   .. figure:: /_static/images/en-us_image_0000002655079145.png
       :alt: **Figure 7** Template message example
 
       **Figure 7** Template message example
+
+#. (Optional) Configure message attribute parameters. Message attributes specify the scope of message publishing.
+
+   .. table:: **Table 4** Message attribute parameters
+
+      +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      | Parameter                         | Description                                                                                                                                                                                                |
+      +===================================+============================================================================================================================================================================================================+
+      | Type                              | Select the type of the message to be published.                                                                                                                                                            |
+      |                                   |                                                                                                                                                                                                            |
+      |                                   | -  Protocol                                                                                                                                                                                                |
+      |                                   | -  string.array                                                                                                                                                                                            |
+      |                                   | -  String                                                                                                                                                                                                  |
+      +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      | Name                              | Enter up to 32 characters, including only digits, lowercase letters, and underscores (_). Start with a number or lowercase letter. Do not end with an underscore (_) or enter consecutive underscores (_). |
+      |                                   |                                                                                                                                                                                                            |
+      |                                   | -  When you set **Type** to **Protocol**, **Name** will be **smn_protocol** by default.                                                                                                                    |
+      |                                   | -  When you set **Type** to **string.array**, enter the name of the array that restricts the message to be published.                                                                                      |
+      |                                   | -  When you set **Type** to **String**, enter the name of the character string that restricts the message to be published.                                                                                 |
+      +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      | Value                             | -  When you set **Type** to **Protocol**, select a protocol from the drop-down list. The available options are **SMS**, **Email**, **HTTP**, **HTTPS**, and **FunctionGraph (function)**.                  |
+      |                                   |                                                                                                                                                                                                            |
+      |                                   | -  When you set **Type** to **string.array**, the value must be a string array with a length of 1 to 10 elements.                                                                                          |
+      |                                   |                                                                                                                                                                                                            |
+      |                                   |    For example: [ "email", "sms" ]                                                                                                                                                                         |
+      |                                   |                                                                                                                                                                                                            |
+      |                                   | -  When you set **Type** to **String**, you cannot leave **Value** blank. Enter up to 32 characters, including only digits, letters, and underscores (_).                                                  |
+      +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 #. Click **OK**.
 
@@ -315,7 +383,7 @@ Step 4. Publish a Template Message
 Step 5. Receive the Message
 ---------------------------
 
-Subscription endpoints of different protocols receive different messages.
+When adding a subscription to a topic, you can specify a protocol. Messages received by each endpoint vary depending on the selected protocol. The available protocols are as follows:
 
 -  Email
 
@@ -344,10 +412,9 @@ Subscription endpoints of different protocols receive different messages.
    Subscription endpoints are functions. To view messages received, see `Using an SMN Trigger <https://docs.otc.t-systems.com/function-graph/umn/creating_triggers/using_an_smn_trigger.html>`__ in *FunctionGraph User Guide*.
 
 .. |image1| image:: /_static/images/en-us_image_0151546390.png
-.. |image2| image:: /_static/images/en-us_image_0000001973089658.png
-.. |image3| image:: /_static/images/en-us_image_0259222477.png
-.. |image4| image:: /_static/images/en-us_image_0000001495292001.png
-.. |image5| image:: /_static/images/en-us_image_0000002009609645.png
-.. |image6| image:: /_static/images/en-us_image_0259222474.png
-.. |image7| image:: /_static/images/en-us_image_0000002009490141.png
-.. |image8| image:: /_static/images/en-us_image_0259222478.png
+.. |image2| image:: /_static/images/en-us_image_0000002659158837.png
+.. |image3| image:: /_static/images/en-us_image_0151546390.png
+.. |image4| image:: /_static/images/en-us_image_0000002659278785.png
+.. |image5| image:: /_static/images/en-us_image_0151546390.png
+.. |image6| image:: /_static/images/en-us_image_0000002628919572.png
+.. |image7| image:: /_static/images/en-us_image_0151546390.png
