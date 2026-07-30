@@ -9,7 +9,7 @@ You can access the SMN service using a web-based management console and HTTPS-ba
 
 -  **Management console**
 
-   The management console is a web user interface for you to manage your computing, storage, and other cloud resources. You can log in the management console and select **Simple Message Notification** on the homepage to switch to the SMN console.
+   The management console is a web user interface for you to manage your computing, storage, and other cloud resources. To access SMN, log in to the management console and select **Simple Message Notification** from the service list.
 
 -  **APIs**
 

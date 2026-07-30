@@ -10,9 +10,8 @@ Scenarios
 
 You have created a topic and want to modify its display name.
 
-
-Modifying the Display Name of a Topic
--------------------------------------
+Procedure
+---------
 
 #. Log in to the management console.
 
@@ -20,11 +19,11 @@ Modifying the Display Name of a Topic
 
 #. Select **Application** > **Simple Message Notification**.
 
-   The SMN console is displayed.
+   The SMN console appears.
 
 #. In the navigation pane, choose **Topics**.
 
-   The **Topics** page is displayed.
+   The **Topics** page appears.
 
 #. Locate the topic, choose **More** > **Modify Display Name** in the **Operation** column. In the displayed **Modify Display Name** dialog box, enter a new display name.
 
