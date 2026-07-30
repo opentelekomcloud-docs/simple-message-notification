@@ -5,25 +5,21 @@
 Querying the SMN API v2 Version
 ===============================
 
-Description
------------
+Function
+--------
 
--  API name
-
-   QueryV2ApiInfo
-
--  Function
-
-   Query the SMN API v2 version information.
+Query the SMN API v2 version information.
 
 URI
 ---
 
--  URI format
+GET /{api_version}
 
-   GET /{api_version}
+For details, see :ref:`Table 1 <smn_api_510002__table1952532171110>`.
 
--  Parameter description
+.. _smn_api_510002__table1952532171110:
+
+.. table:: **Table 1** URI parameters
 
    +-----------------+-----------------+-----------------+-----------------------------------------+
    | Parameter       | Mandatory       | Type            | Description                             |
@@ -38,78 +34,84 @@ URI
 Request
 -------
 
--  Example request
-
-   .. code-block:: text
-
-      GET https://{SMN_Endpoint}/v2
+None
 
 Response
 --------
 
--  Parameter description
+:ref:`Table 2 <smn_api_510002__en-us_topic_0118694332_table26328706>` describes the response parameters.
 
-   .. table:: **Table 1** Parameter in the response
+.. _smn_api_510002__en-us_topic_0118694332_table26328706:
 
-      ========= ====== ===================
-      Parameter Type   Description
-      ========= ====== ===================
-      version   Object Version information
-      ========= ====== ===================
+.. table:: **Table 2** Response parameters
 
-   .. table:: **Table 2** Description of the **version** field
+   ========= ====== ===================
+   Parameter Type   Description
+   ========= ====== ===================
+   version   Object Version information
+   ========= ====== ===================
 
-      +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------------+
-      | Parameter             | Type                  | Description                                                                                                |
-      +=======================+=======================+============================================================================================================+
-      | id                    | String                | Version number, for example, **v2**                                                                        |
-      +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------------+
-      | links                 | Links structure array | URL of an API. For details, see :ref:`Table 3 <smn_api_510002__table864210364409>`.                        |
-      +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------------+
-      | min_version           | String                | Minimum micro-version number. If the APIs do not support micro-versions, no information will be returned.  |
-      +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------------+
-      | status                | String                | Version status, which can be the following:                                                                |
-      |                       |                       |                                                                                                            |
-      |                       |                       | -  **CURRENT**: widely used version                                                                        |
-      |                       |                       | -  **SUPPORTED**: earlier version that is still supported                                                  |
-      |                       |                       | -  **DEPRECATED**: deprecated version that may be deleted later                                            |
-      +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------------+
-      | updated               | String                | Version release time, which must be UTC time. For example, the release time of v2 is 2014-06-28T12:20:21Z. |
-      +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------------+
-      | version               | String                | Maximum micro-version number. If the APIs do not support micro-versions, no information will be returned.  |
-      +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------------+
+.. table:: **Table 3** Description of the **version** field
 
-   .. _smn_api_510002__table864210364409:
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------------+
+   | Parameter             | Type                  | Description                                                                                                |
+   +=======================+=======================+============================================================================================================+
+   | id                    | String                | Version number, for example, **v2**                                                                        |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------------+
+   | links                 | Links structure array | URL of an API. For details, see :ref:`Table 4 <smn_api_510002__table864210364409>`.                        |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------------+
+   | min_version           | String                | Minimum micro-version number. If the APIs do not support micro-versions, no information will be returned.  |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------------+
+   | status                | String                | Version status, which can be the following:                                                                |
+   |                       |                       |                                                                                                            |
+   |                       |                       | -  **CURRENT**: widely used version                                                                        |
+   |                       |                       | -  **SUPPORTED**: earlier version that is still supported                                                  |
+   |                       |                       | -  **DEPRECATED**: deprecated version that may be deleted later                                            |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------------+
+   | updated               | String                | Version release time, which must be UTC time. For example, the release time of v2 is 2014-06-28T12:20:21Z. |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------------+
+   | version               | String                | Maximum micro-version number. If the APIs do not support micro-versions, no information will be returned.  |
+   +-----------------------+-----------------------+------------------------------------------------------------------------------------------------------------+
 
-   .. table:: **Table 3** Links structure
+.. _smn_api_510002__table864210364409:
 
-      ========= ====== =========================
-      Parameter Type   Description
-      ========= ====== =========================
-      href      String Shortcut link
-      rel       String Shortcut link marker name
-      ========= ====== =========================
+.. table:: **Table 4** Links structure
 
--  Example response
+   ========= ====== =========================
+   Parameter Type   Description
+   ========= ====== =========================
+   href      String Shortcut link
+   rel       String Shortcut link marker name
+   ========= ====== =========================
 
-   .. code-block::
+Example Request
+---------------
 
-      {
-          "version":
-              {
-                  "id": "v2",
-                  "links": [
-                      {
-                          "href": "https://127.0.0.1/v2",
-                          "rel": "self"
-                      }
-                  ],
-                  "min_version": "",
-                  "status": "CURRENT",
-                  "updated": "2018-09-19T00:00:00Z",
-                  "version": ""
-              }
-      }
+.. code-block:: text
+
+   GET https://{SMN_Endpoint}/v2
+
+Example Response
+----------------
+
+.. code-block::
+
+   {
+       "version":
+           {
+               "id": "v2",
+               "links": [
+                   {
+                       "href": "https://127.0.0.1/v2",
+                       "rel": "self"
+                   }
+               ],
+               "min_version": "",
+               "status": "CURRENT",
+               "updated": "2018-09-19T00:00:00Z",
+               "version": ""
+           }
+   }
 
 Returned Value
 --------------

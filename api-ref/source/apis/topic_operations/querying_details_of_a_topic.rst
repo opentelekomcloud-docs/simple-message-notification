@@ -5,25 +5,21 @@
 Querying Details of a Topic
 ===========================
 
-Description
------------
+Function
+--------
 
--  API name
-
-   QueryTopicDetail
-
--  Function
-
-   Query the detailed information about a topic.
+Query the detailed information about a topic.
 
 URI
 ---
 
--  URI format
+GET /v2/{project_id}/notifications/topics/{topic_urn}
 
-   GET /v2/{project_id}/notifications/topics/{topic_urn}
+For details, see :ref:`Table 1 <smn_api_51005__table60453091>`.
 
--  Parameter description
+.. _smn_api_51005__table60453091:
+
+.. table:: **Table 1** URI parameters
 
    +-----------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------------------+
    | Parameter       | Mandatory       | Type            | Description                                                                                                       |
@@ -38,16 +34,16 @@ URI
 Request
 -------
 
-Example request
-
-.. code-block:: text
-
-   GET https://{SMN_Endpoint}/v2/{project_id}/notifications/topics/urn:smn:regionId:8bad8a40e0f7462f8c1676e3f93a8183:test_create_topic_v2
+None
 
 Response
 --------
 
--  Parameter description
+:ref:`Table 2 <smn_api_51005__table38552084>` describes the response parameters.
+
+.. _smn_api_51005__table38552084:
+
+.. table:: **Table 2** Response parameters
 
    +-----------------------+-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
    | Parameter             | Type                  | Description                                                                                                                                  |
@@ -77,21 +73,29 @@ Response
    | topic_id              | String                | Topic ID                                                                                                                                     |
    +-----------------------+-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
--  Example response
+Example Request
+---------------
 
-   .. code-block::
+.. code-block:: text
 
-      {
-          "update_time": "2016-08-01T02:16:38Z",
-          "push_policy": 0,
-          "create_time": "2016-08-01T02:16:38Z",
-          "name": "test_create_topic_v2",
-          "topic_urn": "urn:smn:regionId:8bad8a40e0f7462f8c1676e3f93a8183:test_create_topic_v2",
-          "display_name": "test create topic v2",
-          "request_id": "6837531fd3f54550927b930180a706bf",
-          "enterprise_project_id" : "0"
-          "topic_id" : "84698185946d44d08431aa441d8e2cf2"
-      }
+   GET https://{SMN_Endpoint}/v2/{project_id}/notifications/topics/urn:smn:regionId:8bad8a40e0f7462f8c1676e3f93a8183:test_create_topic_v2
+
+Example Response
+----------------
+
+.. code-block::
+
+   {
+       "update_time": "2016-08-01T02:16:38Z",
+       "push_policy": 0,
+       "create_time": "2016-08-01T02:16:38Z",
+       "name": "test_create_topic_v2",
+       "topic_urn": "urn:smn:regionId:8bad8a40e0f7462f8c1676e3f93a8183:test_create_topic_v2",
+       "display_name": "test create topic v2",
+       "request_id": "6837531fd3f54550927b930180a706bf",
+       "enterprise_project_id" : "0"
+       "topic_id" : "84698185946d44d08431aa441d8e2cf2"
+   }
 
 Returned Value
 --------------

@@ -5,25 +5,21 @@
 Querying a Topic Policy
 =======================
 
-Description
------------
+Function
+--------
 
--  API name
-
-   ListTopicAttributes
-
--  Function
-
-   Query a topic policy.
+Query a topic policy.
 
 URI
 ---
 
--  URI format
+GET /v2/{project_id}/notifications/topics/{topic_urn}/attributes
 
-   GET /v2/{project_id}/notifications/topics/{topic_urn}/attributes
+For details, see :ref:`Table 1 <smn_api_51006__table60453091>`.
 
--  Parameter description
+.. _smn_api_51006__table60453091:
+
+.. table:: **Table 1** URI parameters
 
    +-----------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------------------+
    | Parameter       | Mandatory       | Type            | Description                                                                                                       |
@@ -39,23 +35,23 @@ URI
    |                 |                 |                 | Only specified policy names are supported. For details, see :ref:`Topic Attribute List <smn_api_a1000>`.          |
    +-----------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------------------+
 
-   .. note::
+.. note::
 
-      If **name** is not specified, all attribute values of the topic are queried. The supported attribute values are provided in :ref:`Topic Attribute List <smn_api_a1000>`.
+   If **name** is not specified, all attribute values of the topic are queried. The supported attribute values are provided in :ref:`Topic Attribute List <smn_api_a1000>`.
 
 Request
 -------
 
-Example request
-
-.. code-block:: text
-
-   GET https://{SMN_Endpoint}/v2/{project_id}/notifications/topics/urn:smn:regionId:8bad8a40e0f7462f8c1676e3f93a8183:test_create_topic_v2/attributes?name=access_policy
+None
 
 Response
 --------
 
--  Parameter description
+:ref:`Table 2 <smn_api_51006__table38552084>` describes the response parameters.
+
+.. _smn_api_51006__table38552084:
+
+.. table:: **Table 2** Response parameters
 
    +-----------------------+-----------------------+------------------------------------------+
    | Parameter             | Type                  | Description                              |
@@ -69,45 +65,53 @@ Response
    |                       |                       | **introduction**: description of a topic |
    +-----------------------+-----------------------+------------------------------------------+
 
--  Example response
+Example Request
+---------------
 
-   .. code-block::
+.. code-block:: text
 
-      {
-         "request_id": "6837531fd3f54550927b930180a706bf",
-         "attributes": {
-         "access_policy": "{
-               "Version": "2016-09-07",
-               "Id": "__default_policy_ID",
-               "Statement": [
-                  {
-                    "Sid": "__user_pub_0",
-                    "Effect": "Allow",
-                    "Principal": {
-                      "CSP": [
-                               "urn:csp:iam::93dc1b4697ac493d9b7d089569f86b32:root"
-                             ]
-                       },
-                    "Action": ["SMN:Publish","SMN:QueryTopicDetail"],
-                    "Resource": "urn:smn:regionId:8bad8a40e0f7462f8c1676e3f93a8183:aaa"
+   GET https://{SMN_Endpoint}/v2/{project_id}/notifications/topics/urn:smn:regionId:8bad8a40e0f7462f8c1676e3f93a8183:test_create_topic_v2/attributes?name=access_policy
+
+Example Response
+----------------
+
+.. code-block::
+
+   {
+      "request_id": "6837531fd3f54550927b930180a706bf",
+      "attributes": {
+      "access_policy": "{
+            "Version": "2016-09-07",
+            "Id": "__default_policy_ID",
+            "Statement": [
+               {
+                 "Sid": "__user_pub_0",
+                 "Effect": "Allow",
+                 "Principal": {
+                   "CSP": [
+                            "urn:csp:iam::93dc1b4697ac493d9b7d089569f86b32:root"
+                          ]
                     },
-                    {
-                    "Sid": "__service_pub_0",
-                    "Effect": "Allow",
-                    "Principal": {
-                       "Service": ["obs"]
-                       },
-                    "Action": ["SMN:Publish","SMN:QueryTopicDetail"],
-                    "Resource": "urn:smn:regionId:8bad8a40e0f7462f8c1676e3f93a8183:aaa"
-                    }
-                   ]
-                }"
-             }
-        }
+                 "Action": ["SMN:Publish","SMN:QueryTopicDetail"],
+                 "Resource": "urn:smn:regionId:8bad8a40e0f7462f8c1676e3f93a8183:aaa"
+                 },
+                 {
+                 "Sid": "__service_pub_0",
+                 "Effect": "Allow",
+                 "Principal": {
+                    "Service": ["obs"]
+                    },
+                 "Action": ["SMN:Publish","SMN:QueryTopicDetail"],
+                 "Resource": "urn:smn:regionId:8bad8a40e0f7462f8c1676e3f93a8183:aaa"
+                 }
+                ]
+             }"
+          }
+     }
 
-   .. note::
+.. note::
 
-      The value of **access_policy** is a JSON character string, which requires escape characters. While in the preceding example, the characters are not escaped. Escape them before using the policy.
+   The value of **access_policy** is a JSON character string, which requires escape characters. While in the preceding example, the characters are not escaped. Escape them before using the policy.
 
 Returned Value
 --------------

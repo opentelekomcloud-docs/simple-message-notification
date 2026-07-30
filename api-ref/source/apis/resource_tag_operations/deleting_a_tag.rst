@@ -5,25 +5,21 @@
 Deleting a Tag
 ==============
 
-Description
------------
+Function
+--------
 
--  API name
-
-   DeleteResourceTag
-
--  Function
-
-   The API is idempotent. When deleting a tag, the system does not check its character set. The tag key cannot be left blank or be an empty string. If the key of the tag to be deleted does not exist, 404 will be returned.
+The API is idempotent. When deleting a tag, the system does not check its character set. The tag key cannot be left blank or be an empty string. If the key of the tag to be deleted does not exist, 404 will be returned.
 
 URI
 ---
 
--  URI format
+DELETE /v2/{project_id}/{resource_type}/{resource_id}/tags/{key}
 
-   DELETE /v2/{project_id}/{resource_type}/{resource_id}/tags/{key}
+For details, see :ref:`Table 1 <smn_api_56004__table7791104212204>`.
 
--  Parameter description
+.. _smn_api_56004__table7791104212204:
+
+.. table:: **Table 1** URI parameters
 
    +-----------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------+
    | Parameter       | Mandatory       | Type            | Description                                                                                            |
@@ -43,18 +39,28 @@ URI
    |                 |                 |                 | -  Add **X-SMN-RESOURCEID-TYPE=name** in the request header and set the resource ID to the topic name. |
    |                 |                 |                 | -  Call the API for :ref:`querying topics by tag <smn_api_56001>` to obtain the resource ID.           |
    +-----------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------+
+   | key             | Yes             | String          | Key of the tag to be deleted                                                                           |
+   +-----------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------+
 
 Request
 -------
 
--  Example request
-
-   .. code-block:: text
-
-      DELETE https://{SMN_Endpoint}/v2/{project_id}/{resource_type}/{resource_id}/tags/{key}
+None
 
 Response
 --------
+
+None
+
+Example Request
+---------------
+
+.. code-block:: text
+
+   DELETE https://{SMN_Endpoint}/v2/{project_id}/{resource_type}/{resource_id}/tags/{key}
+
+Example Response
+----------------
 
 None
 

@@ -5,25 +5,21 @@
 Querying the Details of a Message Template
 ==========================================
 
-Description
------------
+Function
+--------
 
--  API name
-
-   QueryMessageTemplateDetail
-
--  Function
-
-   Query the template details, including the template content.
+Query the template details, including the template content.
 
 URI
 ---
 
--  URI format
+GET /v2/{project_id}/notifications/message_template/{message_template_id}
 
-   GET /v2/{project_id}/notifications/message_template/{message_template_id}
+For details, see :ref:`Table 1 <smn_api_53005__table48031108>`.
 
--  Parameter description
+.. _smn_api_53005__table48031108:
+
+.. table:: **Table 1** URI parameters
 
    +---------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------------+
    | Parameter           | Mandatory       | Type            | Description                                                                                                         |
@@ -38,16 +34,16 @@ URI
 Request
 -------
 
-Example request
-
-.. code-block:: text
-
-   GET https://{SMN_Endpoint}/v2/{project_id}/notifications/message_template/57ba8dcecda844878c5dd5815b65d10f
+None
 
 Response
 --------
 
--  Parameter description
+:ref:`Table 2 <smn_api_53005__table60555637>` describes the response parameters.
+
+.. _smn_api_53005__table60555637:
+
+.. table:: **Table 2** Response parameters
 
    +-----------------------+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
    | Parameter             | Type                  | Description                                                                                                                                               |
@@ -82,22 +78,30 @@ Response
    | request_id            | String                | Request ID, which is unique                                                                                                                               |
    +-----------------------+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
--  Example response
+Example Request
+---------------
 
-   .. code-block::
+.. code-block:: text
 
-      {
-          "message_template_name": "confirm_message",
-          "protocol": "https",
-          "update_time": "2016-08-02T08:22:25Z",
-          "create_time": "2016-08-02T08:22:20Z",
-          "request_id": "ba79ca8f794f4f50985ce7b98a401b47",
-          "tag_names": [
-              "topic_id_id4"
-          ],
-          "content": "(1/24)You are invited to subscribe to topic({topic_id_id4}). Click the following URL to confirm subscription:(If you do not want to subscribe to this topic, ignore this message.)",
-          "message_template_id": "57ba8dcecda844878c5dd5815b65d10f"
-      }
+   GET https://{SMN_Endpoint}/v2/{project_id}/notifications/message_template/57ba8dcecda844878c5dd5815b65d10f
+
+Example Response
+----------------
+
+.. code-block::
+
+   {
+       "message_template_name": "confirm_message",
+       "protocol": "https",
+       "update_time": "2016-08-02T08:22:25Z",
+       "create_time": "2016-08-02T08:22:20Z",
+       "request_id": "ba79ca8f794f4f50985ce7b98a401b47",
+       "tag_names": [
+           "topic_id_id4"
+       ],
+       "content": "(1/24)You are invited to subscribe to topic({topic_id_id4}). Click the following URL to confirm subscription:(If you do not want to subscribe to this topic, ignore this message.)",
+       "message_template_id": "57ba8dcecda844878c5dd5815b65d10f"
+   }
 
 Returned Value
 --------------

@@ -5,25 +5,21 @@
 Deleting a Specified Topic Policy
 =================================
 
-Description
------------
+Function
+--------
 
--  API name
-
-   DeleteTopicAttributeByName
-
--  Function
-
-   Delete a specified topic policy.
+Delete a specified topic policy.
 
 URI
 ---
 
--  URI format
+DELETE /v2/{project_id}/notifications/topics/{topic_urn}/attributes/{name}
 
-   DELETE /v2/{project_id}/notifications/topics/{topic_urn}/attributes/{name}
+For details, see :ref:`Table 1 <smn_api_51008__table60453091>`.
 
--  Parameter description
+.. _smn_api_51008__table60453091:
+
+.. table:: **Table 1** URI parameters
 
    +-----------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------------------+
    | Parameter       | Mandatory       | Type            | Description                                                                                                       |
@@ -42,16 +38,16 @@ URI
 Request
 -------
 
-Example request
-
-.. code-block:: text
-
-   DELETE https://{SMN_Endpoint}/v2/{project_id}/notifications/topics/{topic_urn}/attributes/access_policy
+None
 
 Response
 --------
 
--  Parameter description
+:ref:`Table 2 <smn_api_51008__table38552084>` describes the response parameters.
+
+.. _smn_api_51008__table38552084:
+
+.. table:: **Table 2** Response parameters
 
    ========== ====== ===========================
    Parameter  Type   Description
@@ -59,13 +55,21 @@ Response
    request_id String Request ID, which is unique
    ========== ====== ===========================
 
--  Example response
+Example Request
+---------------
 
-   .. code-block::
+.. code-block:: text
 
-      {
-          "request_id": "6837531fd3f54550927b930180a706bf"
-      }
+   DELETE https://{SMN_Endpoint}/v2/{project_id}/notifications/topics/{topic_urn}/attributes/access_policy
+
+Example Response
+----------------
+
+.. code-block::
+
+   {
+       "request_id": "6837531fd3f54550927b930180a706bf"
+   }
 
 Returned Value
 --------------
